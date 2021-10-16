@@ -1,0 +1,36 @@
+.udemy-card {
+  background-color: rgba(5, 217, 186, 0.1);
+  width: 350px;
+  margin: 20px auto;
+  text-align: left;
+  border-radius: 6px;
+  padding-bottom: 15px;
+}
+.udemy-card .img {
+  width: 350px;
+}
+.udemy-card h4 {
+  margin: 10px;
+}
+.udemy-card p {
+  margin: 10px;
+  font-size: 0.85rem;
+  color: #014949;
+}
+.udemy-card .btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #014949;
+  color: #ffffff;
+  margin-left: 10px;
+}
+.udemy-card .btn:hover {
+  cursor: pointer;
+  background-color: #8f44ff;
+}
+@media (max-width: 600px) {
+  .udemy-card {
+    display: none;
+  }
+}

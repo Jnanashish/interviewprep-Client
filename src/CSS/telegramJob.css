@@ -1,0 +1,67 @@
+/* CSS file for telegram component (main one) */
+.telegram-promo {
+  background-color: rgba(5, 217, 186, 0.12);
+  padding: 15px 0px 18px;
+}
+/* .sticky {
+  position: fixed;
+  top: 0;
+  background-color: red;
+} */
+.telegram-promo h2 {
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.telegram-promo h2:hover {
+  color: #000;
+}
+.telegram-promo:hover {
+  background-color: rgba(5, 217, 186, 0.1);
+  box-shadow: none;
+}
+.telegram-promo p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #014949;
+}
+.telegram-promo .btn {
+  background-color: #0088cc;
+  border: none;
+  padding: 8px;
+  width: 80%;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-top: 14px;
+  cursor: pointer;
+}
+.telegram-promo .btn:hover {
+  background-color: #0e76a8;
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+  .telegram-promo {
+    grid-template-columns: 100%;
+    padding: 12px 12px 10px;
+    background-color: rgba(5, 217, 186, 0.1);
+  }
+  .telegram-promo h2 {
+    font-family: "Lato", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 550;
+  }
+  .telegram-promo img {
+    display: none;
+  }
+  .telegram-promo p {
+    font-size: 0.97rem;
+    line-height: 1.3rem;
+  }
+  .telegram-promo .btn {
+    width: 95%;
+    margin: 10px auto;
+  }
+}

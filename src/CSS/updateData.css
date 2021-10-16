@@ -1,0 +1,19 @@
+.update {
+  background-color: aqua;
+  cursor: pointer;
+  border: none;
+  width: 100px;
+  padding: 8px;
+  margin-top: 0px;
+  color: #000;
+  border-radius: 6px;
+  margin-left: 30px;
+}
+.updateData button:hover {
+  background-color: red;
+}
+
+.line {
+  margin: 20px auto 0px;
+  width: 60%;
+}

@@ -1,0 +1,34 @@
+.link-container {
+  display: grid;
+  grid-template-columns: 20% 70% 10%;
+  background-color: rgba(5, 217, 186, 0.12);
+
+  padding: 10px 0px;
+  width: 94%;
+  min-height: 60px;
+  margin: 10px auto;
+
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+}
+
+.company-logo {
+  width: 40px;
+  align-self: center;
+  justify-self: center;
+}
+
+.icon {
+  width: 30px;
+  align-self: center;
+  justify-self: center;
+}
+
+.title {
+  font-size: 1.125rem;
+  color: #2d2d2d;
+  align-self: center;
+  text-align: left;
+  font-weight: 600;
+}

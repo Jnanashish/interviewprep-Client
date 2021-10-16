@@ -1,0 +1,139 @@
+.container {
+  max-width: 80%;
+  padding: 12px 15px 15px 12px;
+  margin: 25px auto 5px auto;
+  border-radius: 6px;
+  background-color: #fff;
+  text-align: left;
+}
+.img-container {
+  margin: 25px auto 5px auto;
+  max-width: 80%;
+  cursor: pointer;
+  border: 1px solid #0000ff;
+  border-radius: 6px;
+}
+.container:hover {
+  background-color: #fff;
+  box-shadow: 0 5px 25px 0 rgb(41 128 185 / 15%);
+  cursor: pointer;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.container .company-logo {
+  width: 73px;
+  place-self: center;
+}
+
+.detail .grid {
+  grid-template-columns: 15% 75%;
+  gap: 0px;
+}
+.detail h2 {
+  margin: 0px 0px 10px 0px;
+  color: #181818;
+}
+.detail h2:hover {
+  color: #0000ff;
+}
+.detail p {
+  margin: 0px;
+  align-self: center;
+  font-size: 0.9rem;
+}
+.detail h5 {
+  margin: 0px;
+  font-size: 0.9rem;
+  color: #121212;
+}
+
+.ig-mid {
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  text-align: center;
+  padding: 18px;
+}
+
+.ig-mid a {
+  color: #fff;
+  line-height: 1.4rem;
+  font-size: 1.3rem;
+}
+
+.gfg-cover {
+  margin-top: 20px;
+  max-width: 90%;
+  cursor: pointer;
+  border: 1px solid #0000ff;
+  border-radius: 6px;
+  display: none;
+}
+/* .gfg {
+  display: none;
+} */
+.inv {
+  margin: 30px auto;
+  display: none;
+}
+.code {
+  color: #0000ff;
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+  .container {
+    margin: 15px auto;
+    max-width: 93%;
+    padding: 12px 5px 12px 5px;
+  }
+  .img-container {
+    margin: 5px auto;
+    max-width: 95%;
+  }
+  .grid {
+    gap: 8px;
+    grid-template-columns: 18% 82%;
+  }
+  .container .company-logo {
+    width: 50px;
+    place-self: center;
+  }
+  .detail h2 {
+    font-size: 1.1rem;
+  }
+  .detail .grid {
+    grid-template-columns: 22% 68%;
+  }
+  .tele-data {
+    display: none;
+  }
+  .t-job {
+    background-color: #0088cc;
+    padding: 12px 25px;
+    margin-top: 20px;
+  }
+  .ig-mid {
+    padding: 10px;
+  }
+  .ig-mid a {
+    font-size: 1.1rem;
+  }
+  .gfg-cover {
+    display: inline;
+  }
+
+  .inv {
+    margin: 10px auto;
+    display: block;
+  }
+}

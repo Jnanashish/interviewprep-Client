@@ -1,0 +1,77 @@
+.home .grid-home {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+}
+.sidebar {
+  /* text-align: center; */
+  justify-self: start;
+}
+.sidebar .prepare {
+  margin: 20px 0px;
+}
+.t-text {
+  margin: 35px 0px 15px;
+}
+.home .title-l,
+.title-mobile {
+  margin: 30px auto;
+  font-size: 2.2rem;
+  color: #000;
+}
+.home .title-mobile {
+  display: none;
+}
+
+.home hr {
+  margin: 25px auto;
+  width: 350px;
+}
+.tel-job {
+  display: none;
+}
+
+.book-title,
+.invv {
+  margin: 20px auto;
+  font-size: 1.3rem;
+}
+.datacamp-poster {
+  width: 350px;
+}
+.gfg-m {
+  width: 350px;
+}
+@media (max-width: 600px) {
+  .home .title-mobile {
+    font-size: 1.6rem;
+    display: block;
+    margin: 20px auto 10px;
+  }
+  .home .title-l {
+    display: none;
+  }
+  .home .grid-home {
+    grid-template-columns: 100%;
+  }
+  .sidebar {
+    text-align: center;
+    justify-self: center;
+  }
+  .home hr {
+    margin: 25px auto;
+  }
+  .tel-job {
+    display: block;
+    /* background-color: #0088cc; */
+    background-color: #fff;
+    margin-top: 0px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 0px 0px 12px 12px;
+  }
+  /* .datacamp-poster {
+    display: none;
+  } */
+  .invv {
+    display: none;
+  }
+}

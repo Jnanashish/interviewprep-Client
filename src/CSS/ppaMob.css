@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.ppa-mob {
+  display: none;
+  font-family: "Poppins", sans-serif;
+}
+@media (max-width: 600px) {
+  .ppa-mob {
+    display: block;
+    background-color: #161e2e;
+    color: #fff;
+  }
+  .ppa-mob h2 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+}

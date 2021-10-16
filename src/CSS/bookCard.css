@@ -1,0 +1,46 @@
+.book-container {
+  width: 370px;
+  margin: 0px auto;
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px #00008024;
+}
+.book-img {
+  max-height: 170px;
+  /* max-width: 150px; */
+}
+.book-detail {
+  margin: 1px;
+  padding: 10px 20px 10px 12px;
+  text-align: left;
+  min-width: 100%;
+}
+.book-detail h3 {
+  color: #000;
+  margin-bottom: 8px;
+}
+.book-detail h6 {
+  margin: 5px 0px;
+}
+.buy-btn {
+  width: 150px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: #5547dd;
+  color: #fff;
+  margin-top: 8px;
+}
+.buy-btn:hover {
+  background-color: #0000ff;
+}
+
+@media (max-width: 600px) {
+  .book-container {
+    width: 92%;
+  }
+}

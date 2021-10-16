@@ -1,0 +1,6 @@
+
+
+K Bhuyan, English, 58; S Muchahari, English, 16; D Buragohain, English, 18; M Hatiboruah, Asstt, HM; J Handique, GSc, 28; J Phuakn, Ass, 58; N Changmai, GSc, 18; R Barthakur, Edu, 58; N konwar, Pol Sc, 58; K Gogoi, Ass, 58; P Daimari, S Sc, Eng(Bodo), 20; J Gohain, S Sc, 18; B Chetia, Eng, 20; D Saikia, S Adhyan, 58; N Gogoi, Hindi, 20; D Goswami, Ass, 18; M Barbaruah, Eng, 29; A Basumatari, G Math, 29; D Daimari, G Sc, 20; Nandita, G Math, 30; N Basumatari, S Sc, 16; M Tamuli, S Sc, 20; A Mudoi, Hindi, 51; G Basumatari, Eng, 18; N Bora, S Sc, 18;
+
+
+font-family: 'Inter', sans-serif;
