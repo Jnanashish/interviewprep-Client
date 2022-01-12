@@ -7,6 +7,8 @@
 ## Overview 👀
 
 <img src="https://res.cloudinary.com/dbmv2z9l9/image/upload/v1641573456/ip-cover_kjqijk.png" alt="Homepage cover" width="700">
+<img src="https://res.cloudinary.com/dbmv2z9l9/image/upload/v1641573462/Screenshot_2022-01-07_004102_daiatg.png" alt="Job description page" width="700">
+<img src="https://res.cloudinary.com/dbmv2z9l9/image/upload/v1641573465/ip-cover_1_jmubk4.png" alt="Mobile page" width="700">
 
 
 - **Filter jobs based on Degree, Batch, Job type 🔍**
