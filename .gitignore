@@ -29,3 +29,5 @@ yarn-error.log*
 
 
 /src/CSS
+*.json
+*.css
