@@ -1,10 +1,17 @@
 .home .grid-home {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 65% 35%;
 }
+
 .sidebar {
-  /* text-align: center; */
+  padding: 0px 20px;
   justify-self: start;
+  border-left: 0.6px solid #eee;
+
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  /* padding-top: 40px; */
 }
 .sidebar .prepare {
   margin: 20px 0px;
@@ -12,9 +19,22 @@
 .t-text {
   margin: 35px 0px 15px;
 }
+.sidebar .hr-line {
+  margin: 0px auto 40px;
+  columns: #eaecf3;
+  border-width: 3px;
+  width: 100%;
+}
+
+.line-ad {
+  font-size: 1.5rem;
+  color: #130b43;
+  margin: 0px 0px 18px;
+}
+
 .home .title-l,
 .title-mobile {
-  margin: 30px auto;
+  margin: 30px auto 35px;
   font-size: 2.2rem;
   color: #000;
 }
@@ -22,30 +42,48 @@
   display: none;
 }
 
-.home hr {
-  margin: 25px auto;
-  width: 350px;
+.hr-line {
+  width: 93%;
+  border: 0;
+  height: 0.7px;
+  background: #333;
+  margin: 10px auto 20px;
 }
+
 .tel-job {
   display: none;
 }
 
-.book-title,
-.invv {
-  margin: 20px auto;
-  font-size: 1.3rem;
+.mobile-ad {
+  display: none;
 }
-.datacamp-poster {
-  width: 350px;
+.email-con,
+.ad-con {
+  max-width: 93%;
+  margin: 0px auto;
 }
-.gfg-m {
-  width: 350px;
+
+.sticky-telegram-logo {
+  width: 75px;
+  position: sticky;
+  bottom: 5rem;
+  float: right;
+  right: 50px;
+  border: 2px solid red;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.sticky-telegram-logo:hover {
+  border: 4px solid red;
 }
 @media (max-width: 600px) {
   .home .title-mobile {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     display: block;
-    margin: 20px auto 10px;
+    margin: 20px auto 20px;
+  }
+  .title-mobile span {
+    font-size: 1.2rem;
   }
   .home .title-l {
     display: none;
@@ -54,12 +92,9 @@
     grid-template-columns: 100%;
   }
   .sidebar {
-    text-align: center;
-    justify-self: center;
+    display: none;
   }
-  .home hr {
-    margin: 25px auto;
-  }
+
   .tel-job {
     display: block;
     /* background-color: #0088cc; */
@@ -68,10 +103,8 @@
     padding: 5px 5px 5px 5px;
     border-radius: 0px 0px 12px 12px;
   }
-  /* .datacamp-poster {
-    display: none;
-  } */
-  .invv {
-    display: none;
+
+  .mobile-ad {
+    display: block;
   }
 }

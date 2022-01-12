@@ -1,86 +1,91 @@
-.container {
-  max-width: 80%;
-  padding: 12px 15px 15px 12px;
-  margin: 25px auto 5px auto;
-  border-radius: 6px;
-  background-color: #fff;
-  text-align: left;
-}
-.img-container {
-  margin: 25px auto 5px auto;
-  max-width: 80%;
-  cursor: pointer;
-  border: 1px solid #0000ff;
-  border-radius: 6px;
-}
-.container:hover {
-  background-color: #fff;
-  box-shadow: 0 5px 25px 0 rgb(41 128 185 / 15%);
-  cursor: pointer;
-}
 .grid {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.container {
+  background-color: #fff;
+  text-align: left;
+
+  box-shadow: 0px 4px 20px 0px rgba(79, 114, 205, 0.15);
+  padding: 15px 14px 15px 0px;
+  max-width: 80%;
+  min-height: 80px;
+  margin: 30px auto;
+
+  border-radius: 8px;
+  font-family: "IBM Plex Sans", sans-serif;
+  border: 1px solid #fff;
+  cursor: default;
 }
 
-.container .company-logo {
-  width: 73px;
+.company-logo-con {
+  align-self: center;
+  justify-self: center;
+
+  grid-column: 1;
+  grid-row: 1/4;
+}
+.company-logo-con img {
+  width: 52px;
   place-self: center;
 }
 
-.detail .grid {
-  grid-template-columns: 15% 75%;
-  gap: 0px;
-}
-.detail h2 {
-  margin: 0px 0px 10px 0px;
-  color: #181818;
-}
-.detail h2:hover {
-  color: #0000ff;
-}
-.detail p {
-  margin: 0px;
+.job-title {
+  grid-column: 2/6;
+  grid-row: 1;
+
+  font-size: 1.5rem;
+  color: #130b43;
   align-self: center;
-  font-size: 0.9rem;
+  text-align: left;
+  font-weight: 600;
+  margin: 8px 0px 12px;
 }
-.detail h5 {
+
+.details {
+  grid-column: 2/6;
+  grid-row: 2;
+}
+.detail-item {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  gap: 10px;
+  align-items: center;
+}
+.detail-item p {
+  font-family: poppins, Helvetica, sans-serif;
+  margin: 0px;
+  align-self: start;
+  font-size: 0.9rem;
+  color: #3f3a5a;
+  font-weight: 400;
+}
+.detail-item h5 {
+  font-family: poppins, Helvetica, sans-serif;
+  font-weight: 500;
+  align-self: start;
   margin: 0px;
   font-size: 0.9rem;
   color: #121212;
 }
-
-.ig-mid {
-  background: rgb(63, 94, 251);
-  background: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  text-align: center;
-  padding: 18px;
+.m-details {
+  display: none;
 }
-
-.ig-mid a {
-  color: #fff;
-  line-height: 1.4rem;
-  font-size: 1.3rem;
-}
-
-.gfg-cover {
-  margin-top: 20px;
-  max-width: 90%;
+.view-jd-btn {
+  grid-column: 5;
+  grid-row: 3;
+  color: #ffffff;
+  background-color: #604fcd;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  border: 1px solid #0000ff;
-  border-radius: 6px;
-  display: none;
+  margin-top: 6px;
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
-/* .gfg {
-  display: none;
-} */
+
 .inv {
   margin: 30px auto;
   display: none;
@@ -88,52 +93,67 @@
 .code {
   color: #0000ff;
 }
+.m-view,
+.m-jd-btn {
+  display: none;
+}
 
 /* For mobile devices */
 @media (max-width: 600px) {
   .container {
-    margin: 15px auto;
+    margin: 19px auto;
     max-width: 93%;
-    padding: 12px 5px 12px 5px;
+    padding: 12px 10px 12px 10px;
   }
-  .img-container {
-    margin: 5px auto;
-    max-width: 95%;
-  }
-  .grid {
-    gap: 8px;
-    grid-template-columns: 18% 82%;
-  }
-  .container .company-logo {
-    width: 50px;
+  .company-logo-con {
+    width: 40px;
     place-self: center;
+    grid-column: 1;
+    grid-row: 1;
   }
-  .detail h2 {
+  .company-logo-con img {
+    width: 33px;
+  }
+  .job-title {
     font-size: 1.1rem;
+    margin: 0px 0px 12px;
   }
-  .detail .grid {
-    grid-template-columns: 22% 68%;
+  .detail-item {
+    grid-template-columns: 18% 82%;
+    gap: 8px;
   }
-  .tele-data {
+  .details {
+    grid-column: 1/6;
+    grid-row: 2;
+  }
+  .detail-item p {
+    font-size: 0.75rem;
+  }
+  .detail-item h5 {
+    font-size: 0.75rem;
+    justify-self: end;
+  }
+  .view-jd-btn {
     display: none;
   }
-  .t-job {
-    background-color: #0088cc;
-    padding: 12px 25px;
-    margin-top: 20px;
-  }
-  .ig-mid {
-    padding: 10px;
-  }
-  .ig-mid a {
-    font-size: 1.1rem;
-  }
-  .gfg-cover {
-    display: inline;
+  .m-jd-btn {
+    display: block;
+    grid-column: 5;
+    grid-row: 2;
+    cursor: pointer;
+    align-self: end;
+    justify-self: end;
+    width: 20px;
   }
 
   .inv {
     margin: 10px auto;
+    display: block;
+  }
+  .m-view {
+    display: block;
+  }
+  .m-details {
     display: block;
   }
 }

@@ -1,11 +1,8 @@
 import {useState} from "react";
 
-// import css
+// css
 import "../../CSS/addData.css"
 
-// import react toast
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 // import ck editior
 import { CKEditor } from '@ckeditor/ckeditor5-react'
@@ -14,34 +11,32 @@ import { config } from "../../Config/editorConfig"
 
 import {API} from "../../Backend"
 
-const AddData = () =>{
+
+// import react toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const EditData = (props) =>{
     ClassicEditor.defaultConfig = config
-
     // state to store all the links data
-    const [title, setTitle] = useState('');
-    const [role, setRole] = useState('N');
-    const [batch, setBatch] = useState('2022');
-    const [jobtype, setJobtype] = useState('Intern');
-    const [degree, setDegree] = useState('B.E / B.Tech / M.Tech');
-    const [salary, setSalary] = useState('Not disclosed');
-    const [link, setLink] = useState('');
-    const [jobdesc, setJobdesc] = useState('N');
-    const [eligibility, setEligibility] = useState('N');
-    const [experience, setExperience] = useState('N');
-    const [lastdate, setLastdate] = useState('23/10/2021');
-    const [skills, setSkills] = useState('N');
-    const [responsibility, setResponsibility] = useState('N');
-    const [aboutCompany, setAboutCompany] = useState('N');
-    const [location, setLocation] = useState('N');
-    const [jdpage, setJdpage] = useState('false');
-    const [companytype, setCompanytype] = useState('product / service');
-
-    
+    const [title, setTitle] = useState(props.data.title);
+    const [role, setRole] = useState(props.data.role);
+    const [batch, setBatch] = useState(props.data.batch);
+    const [jobtype, setJobtype] = useState(props.data.jobtype);
+    const [degree, setDegree] = useState(props.data.degree);
+    const [salary, setSalary] = useState(props.data.salary);
+    const [link, setLink] = useState(props.data.link);
+    const [jobdesc, setJobdesc] = useState(props.data.jobdesc);
+    const [eligibility, setEligibility] = useState(props.data.eligibility);
+    const [experience, setExperience] = useState(props.data.experience);
+    const [lastdate, setLastdate] = useState(props.data.lastdate);
+    const [skills, setSkills] = useState(props.data.skills);
+    const [responsibility, setResponsibility] = useState(props.data.responsibility);
+    const [aboutCompany, setAboutCompany] = useState(props.data.aboutCompany);
+    const [location, setLocation] = useState(props.data.location);
+    const [imagePath, setImagepath] = useState(props.data.imagePath);
+    const id = props.data._id;
     const formData = new FormData();    
-    const handleimginp = (e) =>{
-        const file = e.target.files ;
-        formData.append('photo', file[0]);
-    }
 
     const addData = async (e) =>{
         e.preventDefault();
@@ -61,16 +56,14 @@ const AddData = () =>{
         formData.append("responsibility", responsibility)
         formData.append("aboutCompany", aboutCompany)
         formData.append("location", location)
-        formData.append("jdpage", jdpage)
-        formData.append("companytype", companytype)
+        formData.append("imagePath", imagePath)
 
-        const res = await fetch(`${API}/jd/add`,{
-            method : "POST",
+        const res = await fetch(`${API}/jd/update/${id}`,{
+            method : "PUT",
             body : formData
         })
-
-        if(res.status === 201){
-            toast('Job Data Added Successfully')
+        if(res.status === 200){
+            toast('Data Updated Successfully')
         } else {
             toast.error("An error Occured")
         }
@@ -78,7 +71,6 @@ const AddData = () =>{
 
     return(
         <div className="admin">
-        <h2 className="adminpanel-title">Add New Job </h2>
         <form method = "POST" >
         <div className="admin-grid">
             <h3 className="admin-label">Title of the Job : </h3>
@@ -93,15 +85,15 @@ const AddData = () =>{
                 type="text" placeholder = "Link"/>
         </div>
         <div className="admin-grid">
-            <h3 className="admin-label">Degree : </h3>
-            <input className="admin-input" value = {degree} 
-                onChange = {(e) => setDegree(e.target.value)}
-                type="text" />
-        </div>
-        <div className="admin-grid">
             <h3 className="admin-label">Batch : </h3>
             <input className="admin-input" value = {batch} 
                 onChange = {(e) => setBatch(e.target.value)}
+                type="text" />
+        </div>
+        <div className="admin-grid">
+            <h3 className="admin-label">Role for the job : </h3>
+            <input className="admin-input" value = {role} 
+                onChange = {(e) => setRole(e.target.value)}
                 type="text" />
         </div>
         <div className="admin-grid">
@@ -111,25 +103,9 @@ const AddData = () =>{
                 type="text" />
         </div>
         <div className="admin-grid">
-            <h3 className="admin-label">Show jdpage : </h3>
-            <input className="admin-input" value = {jdpage} 
-                onChange = {(e) => setJdpage(e.target.value)}
-                placeholder = "true / false"
-                type="text" />
-        </div>
-        {jdpage === "true" && 
-        <div>
-        <br />
-        <div className="admin-grid">
-            <h3 className="admin-label">Companytype : </h3>
-            <input className="admin-input" value = {companytype} 
-                onChange = {(e) => setCompanytype(e.target.value)}
-                type="text" />
-        </div>
-        <div className="admin-grid">
-            <h3 className="admin-label">Role for the job : </h3>
-            <input className="admin-input" value = {role} 
-                onChange = {(e) => setRole(e.target.value)}
+            <h3 className="admin-label">Degree : </h3>
+            <input className="admin-input" value = {degree} 
+                onChange = {(e) => setDegree(e.target.value)}
                 type="text" />
         </div>
         <div className="admin-grid">
@@ -156,80 +132,84 @@ const AddData = () =>{
                 onChange = {(e) => setLocation(e.target.value)}
                 type="text" /> 
         </div>
-        <br />
+
         <div className="ck-grid">
             <h3 className="admin-label">Description of job : </h3>
             <CKEditor
                 className="ck-input"
                 editor={ClassicEditor}
-                value = {jobdesc}
+                data = {jobdesc}
                 onChange={(event, editor) => {
                     const data = editor.getData()
                     setJobdesc(data)
                 }}
             />
         </div>
+
         <div className="ck-grid">
             <h3 className="admin-label">Eligibility Criteria : </h3>
             <CKEditor
                 className="ck-input"
                 editor={ClassicEditor}
-                value = {eligibility}
+                data = {eligibility}
                 onChange={(event, editor) => {
                     const data = editor.getData()
                     setEligibility(data)
                 }}
             />
         </div>
+
         <div className="ck-grid">
             <h3 className="admin-label">Responsibility of the job : </h3>
             <CKEditor
                 className="ck-input"
                 editor={ClassicEditor}
-                value = {responsibility}
+                data = {responsibility}
                 onChange={(event, editor) => {
                     const data = editor.getData()
                     setResponsibility(data)
                 }}
             />
         </div>
+
         <div className="ck-grid">
             <h3 className="admin-label">Skills needed : </h3>
             <CKEditor
                 className="ck-input"
                 editor={ClassicEditor}
-                value = {skills}
+                data = {skills}
                 onChange={(event, editor) => {
                     const data = editor.getData()
                     setSkills(data)
                 }}
             />
         </div>
+
         <div className="ck-grid">
             <h3 className="admin-label">About the company : </h3>
             <CKEditor
                 className="ck-input"
                 editor={ClassicEditor}
-                value = {aboutCompany}
+                data = {aboutCompany}
                 onChange={(event, editor) => {
                     const data = editor.getData()
                     setAboutCompany(data)
                 }}
             />
-        </div> 
-        </div>}  
+        </div>   
         <div className="admin-grid">
-            <h3 className="admin-label">Company logo : </h3>
-            <div>
-                <input onChange = {handleimginp} name="image" type="file"/>              
-                <button className = "addlink-data" type= "button" 
-                onClick = {addData}>Submit</button>
-                <ToastContainer /> 
-            </div>
-        </div>
+            <h3 className="admin-label">Image Path : </h3>
+            <input className="admin-input" value = {imagePath} 
+                onChange = {(e) => setImagepath(e.target.value)}
+                type="text" />
+        </div>               
+        <button className = "update" type= "button" 
+            onClick = {addData}
+            >Update</button>
+            <ToastContainer/>
         </form>
        </div> 
     )
 }
 
-export default AddData;
+export default EditData;

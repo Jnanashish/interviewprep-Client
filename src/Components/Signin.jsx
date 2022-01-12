@@ -9,7 +9,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 // firebase stuff
 import { initializeApp } from "firebase/app"
-import firebaseConfig from "../firebase_config";
+import firebaseConfig from "../Config/firebase_config";
 initializeApp(firebaseConfig);
 
 
@@ -18,11 +18,11 @@ const Signin = () =>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
+    
     const handleSignin = () =>{
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
         .then( res=>{
-            console.log(res);
             context.setUser({email:res.user.email})
         }).catch(err => {
             alert(err.message);

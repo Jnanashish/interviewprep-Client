@@ -1,82 +1,53 @@
 import React from 'react'
 
-// ---------------------------------------------------
+
 // import components
-import Header from "./Header";
-import Data from "../Components/Admin/Data"
-import Footer from "./Footer";
-import Ppa from "./AD/Ppa"
-import FreeCourse from './AD/Geeksforgeeks/FreeCourse';
-// import TelegramJob from './SocialMedia/TelegramJob';
-import Telegram from './SocialMedia/Telegram';
-// import Instagram from './SocialMedia/Instagram';
-// import Linkedin from './SocialMedia/Linkedin';
-// import Ebook from './SocialMedia/Ebook';
-import EbookCard from './UiComponent/EbookCard';
-import UdemyDSA from './AD/UdemyDSA';
+import Header from './UiComponent/Header';
+import GetData from "./JobDesc/GetJdData" 
+import Footer from './UiComponent/Footer';
+import Ads from './AD/GetAdBanner';
+import TelegramJob from './SocialMedia/TelegramJob';
+import Feedback from './UiComponent/Feedback';
+import MainAd from './AD/GetAdLink';
 
-import GetData from "./New UI/GetData"
 
-// ---------------------------------------------------
+
 // import css 
 import "../CSS/home.css"
-
-
-// ---------------------------------------------------
-// import images
-import gfg from "../Image/gfg.png"
-import GfgAffiliate from './AD/Geeksforgeeks/GfgAffiliate';
-import TempAD from './AD/TempAD';
-// import datacamp from "../Image/datacamp.png"
 
 
 const Home = () => {
     return (
         <div className = "home">
             <Header/>
-            <div className = "tel-job gfg">
-                {/* <TelegramJob/> */}
-                {/* <FreeCourse/> */}
-                {/* <MidUp/> */}
-                <TempAD/>
-                {/* <Telegram/> */}
-            </div>
-            {/* <FreeCourse/> */}
-
+            <div className="mobile-ad">
+                <hr className="hr-line"/>
+                <h1 className = "title-mobile">📌 Important Links 📌</h1>
+                <div className="ad-con"><MainAd/></div>
+            </div>  
             <h1 className = "title-l">Get off-campus placement drives & internship updates</h1>
-            <h1 className = "title-mobile">Recent off-campus drives 👇</h1>
+            <h1 className = "title-mobile">Recent off-campus drives <span>👇</span></h1>
             <div className = "grid-home">
-                {/* <Data/>  */}
-                <GetData/>
+                <div className="center">
+                    <GetData/>
+                </div>  
+                
+                {/* For desktop view only */}
                 <div className = "sidebar">
-                        <h3 className="invv">Invitation code : 
-                <span className="code">GFGH1EIFT</span>
-            </h3>
-            <div>
-                <TempAD/>
-                <a href="https://bit.ly/3ihtYi1">
-                    <img className = "gfg-m" src= {gfg} alt="" />
-                </a>
-                <h3 className="inv">Invitation code : 
-                    <span className="code">GFGH1EIFT</span>
-                </h3>
-                </div>
-                    <h3 className="book-title">Become 100% Interview Ready 🚀</h3>
-                    <Ppa/>                    
-                    <hr /> 
-                    {/* <UdemyDSA/> */}
-                    {/* <a href="https://bit.ly/up-ip-ig">
-                        <img className = "datacamp-poster" src={up} alt="" />
-                    </a> */}
-                    <GfgAffiliate/>
-                    {/* <a href="https://datacamp.pxf.io/c/2393879/1012793/13294">
-                        <img className = "datacamp-poster" src={datacamp} alt="" />
-                    </a>*/}
-                    <hr /> 
-                    <h3 className="book-title">📚 Books for interview preparation</h3>
-                    <EbookCard/>
+                    <br /> <br />
+                    <h1 className="line-ad">Important Links 🔥</h1>
+                    <br />
+                    <div className="ad-con"><MainAd/></div>
+                    <div className="ad-con"><Ads/></div> 
                 </div>   
             </div>
+            {/* For Mobile view only */}
+            <div className="mobile-ad">
+                <div className="ad-con"><TelegramJob/></div>
+            </div>
+            <a href="https://t.me/interviewpreptech" target="_blank" rel="noopener noreferrer"><img className='sticky-telegram-logo' src="https://img.icons8.com/fluency/240/000000/telegram-app.png" alt="Telegram logo" /></a>
+            
+            <Feedback/>
             <Footer/>          
         </div>
     )

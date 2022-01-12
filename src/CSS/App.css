@@ -8,6 +8,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;600;700;800&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap");
+
+/* font-family: 'IBM Plex Sans', sans-serif; */
+
 * {
   margin: 0px;
   padding: 0px;
@@ -15,7 +19,8 @@
 }
 
 body {
-  background-color: rgb(238, 244, 254);
+  /*  background-color: rgb(238, 244, 254);  */
+  background-color: #fff;
 }
 
 .App {

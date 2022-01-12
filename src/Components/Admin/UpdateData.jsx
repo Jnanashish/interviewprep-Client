@@ -1,54 +1,69 @@
 import React ,{useState, useEffect} from 'react'
 
-// import css
+//import css
+import "../../CSS/Admin Panel/updateData.css"
 import "../../CSS/link.css"
-import "../../CSS/updateData.css"
+
+
+// import react toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import {API} from "../../Backend"
 
 // import components
-import LinkCard from "../UiComponent/LinkCard"
+import LinkCard from "./LinkCard"
+import Update from './Update'
 
 const UpdateData = () => {
     useEffect(() => {
         getData();
     }, [])
+
     const deleteData = (id) =>{
-        fetch(`https://interviewprep-api.herokuapp.com/delete/${id}`, { method: 'DELETE' })
-        .then((res) => 
-            getData()
+        fetch(`${API}/jd/delete/${id}`, { method: 'DELETE' })
+        .then((res) =>
+            getData(),
+            toast('Data Deleted Successfully')
         ) 
         .catch((err) => {
-            window.alert(err)
-        })        
+            toast.error("An error Occured")
+        })
+                
     }
 
     const [data, setData] = useState([]);
+
     const getData = async() =>{
         try {
-            const res = await fetch('https://interviewprep-api.herokuapp.com/get', {
+            const res = await fetch(`${API}/jd/get/all`, {
                 method : "GET",
-                headers : {
-                    Accept : "application/json",
-                    "Content-Type" : "application/json"
-                },
-             });
-             const data = await res.json();  
-             setData(data);
-
+            });
+            const data = await res.json(); 
+            setData(data);
         } catch (error) {
               console.log("no");
         }
     }
 
     return (
-        <div>   
-                <h2>Total Job is : {data.length}</h2> 
-               
-               {data.map(item => { 
+        <div className = "update-data-container">  
+            <h2 className="adminpanel-title">List of available Jobs -  {data.length} </h2>  
+            {data.map(item => { 
                 return(
                     <div className = "updateData">
-                        <LinkCard key={item._id} title = {item.title} position = {item.position} degree = {item.degree} batch = {item.batch} imagePath = {item.imagePath}/>
-                        <button onClick={() => deleteData(item._id)} className = "update">Delete</button>
-                        <a href={item.link} target="_blank" rel="noopener noreferrer"><button className = "update">Visit Link</button></a>
+                        <LinkCard 
+                            key={item._id} title = {item.title} lastdate={item.lastdate} totalclick = {item.totalclick}                           
+                        />
+                        <div className="adminlink-btn">
+                            <button onClick={() => deleteData(item._id)} className = "update">Delete</button>
+                            <ToastContainer />
+                            <a href={item.link} target="_blank" rel="noopener noreferrer">
+                                <button className = "update">Visit Link</button>
+                            </a>
+                            
+                        </div>
+                        <Update item = {item}/>                  
                         <hr className = "line" />
                     </div>
                 )

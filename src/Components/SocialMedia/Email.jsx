@@ -5,12 +5,14 @@ import validator from 'validator'
 // import firebase config
 import { getDatabase, ref, set } from "firebase/database";
 
-//import css
+// import css
 import "../../CSS/email.css"
 
 
-const Email = () => {
+const Email = (props) => {
     const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [year, setYear] = useState("");
     const [emailError, setEmailError] = useState(''); 
     const [flag, setFlag] = useState(true);     
 
@@ -20,40 +22,53 @@ const Email = () => {
       if (!validator.isEmail(email)) {
         setEmailError('* Enter valid Email!')
       }
-
       else{
           try { 
               set(ref(db, 'email/' + v4()), {
                   email : email,
+                  name : name,
+                  year: year,
               })
           } catch (error) { console.log(error);}   
-        
           setFlag(false);
       }
     }
 
     return (
-    <div className="main">
     <div className="email">
-      <h1>Comming Soon...</h1>
-      <p>Hello👋, We are currently working on a guided Roadmap for Interview Preparation. Sign up to join our exclusive email list and be the first one to know when it’s released!</p>
+      <p>Get new job updates by email 😇</p>
       <p className="error-msg">{emailError}</p>
-      {(flag === true) && <div className="form">
+      {(flag === true) && 
+      <div className="form">
         <input 
+          className = "email-input"
+          type="text" 
+          placeholder="Which year you are in college ? (or Passout)" 
+          value={year} 
+          onChange={(e) => setYear(e.target.value)}
+        />
+        <input 
+          className = "email-input"
+          type="text" 
+          placeholder="Enter your name" 
+          value={name} 
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input 
+          className = "email-input"
           type="email" 
-          placeholder="yourname@gmail.com" 
+          placeholder="Enter your email address" 
           value={email} 
           onChange={(e) => setEmail(e.target.value)}
         />
-
         <button 
+          className = "email-btn"
           type="submit" 
           onClick={addemail}>Get Updates
         </button>
       </div>
       }
       {(flag === false) && <h3 className="thank">Thank You ❤️</h3>} 
-    </div>
     </div>
     )
 }
