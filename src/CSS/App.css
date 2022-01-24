@@ -42,8 +42,15 @@ a {
   color: #000;
 }
 
+.viewMobile {
+  display: none;
+}
+
 @media (max-width: 600px) {
   body {
     background-color: rgba(5, 218, 186, 0) 100%;
+  }
+  .viewMobile {
+    display: block;
   }
 }

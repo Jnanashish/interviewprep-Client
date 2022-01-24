@@ -51,7 +51,8 @@ const Data = () => {
             setShowloader(true)
         }
     }
-    const setpagenum = () => setPagenum(pagenum + 1)
+    //TODO: const setpagenum = () => setPagenum(pagenum + 1)
+    const setpagenum = () => setPagenum(pagenum)
 
     const getBatchData = async(batch) =>{
         setData([])

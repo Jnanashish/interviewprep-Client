@@ -130,3 +130,8 @@ const EmailAd = () => {
 }
 
 export default EmailAd;
+// .email-con,
+// .adcon {
+//   max-width: 93%;
+//   margin: 0px auto;
+// }

@@ -10,7 +10,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 
 // import components
-import Home from "./Components/Home";
+import Home from "./Pages/Homepage/Home";
 import Signin from "./Components/Signin";
 import Email from "./Components/SocialMedia/Email";
 import LinkUI from "./Components/JobDesc/LinkUi";
