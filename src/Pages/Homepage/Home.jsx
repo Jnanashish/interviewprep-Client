@@ -1,51 +1,64 @@
 import React from 'react'
 
 // import components
-import Header from '../../Components/UiComponent/Header';
-import GetData from "../../Components/JobDesc/GetJdData" 
-import Footer from '../../Components/UiComponent/Footer';
-import Ads from '../../Components/AD/GetAdBanner';
-import TelegramJob from '../../Components/SocialMedia/TelegramJob';
-import Feedback from '../../Components/UiComponent/Feedback';
-import MainAd from '../../Components/AD/GetAdLink';
+import Header from '../../Components/UiComponent/Header/Header';
+import Jobdash from "../../Components/Jobdash/Jobdash"; 
+import Footer from '../../Components/UiComponent/Footer/Footer';
+import Telegrambanner from '../../Components/Telegram/Telegrambanner';
+import Feedback from '../../Components/UiComponent/Feedback/Feedback';
+import Linkda from "../../Components/LinkDa/Linkda"
+import Sidebar from '../../Components/Sidebar/Sidebar';
+import Topda from '../../Components/Topda/Topda';
 
 // import css 
-import styles from "./home.module.css"
+import styles from "./home.module.scss"
+
+// import image
+import headerbanner from "../../Image/headerbanner.svg"
+
+// import icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExternalLink } from '@fortawesome/free-solid-svg-icons'
 
 
 const Home = () => {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    var isInstagram = (ua.indexOf('Instagram') > -1) ? true : false;
+
+    console.log(isInstagram);
     return (
-        <div className = "homeContainer">
+        <div className = "home_container">
+            <Topda/>
             <Header/>
-            <div className = "viewMobile">
-                <hr className = {styles.hrline}/>
-                <h1 className = {styles.titleMobile}>📌 Important Links 📌</h1>
-                <div className = {styles.adcon}><MainAd/></div>
+            <img className={styles.header_img} src={headerbanner} alt="Header" />
+            <div id='linkda_mobile_id' className = {styles.linkda_mobile}>
+                {isInstagram && <div className={styles.browser_msg}>
+                    <a href="https://openinapp.co/6d4d6">Open this website in your browser <FontAwesomeIcon icon={faExternalLink} /></a>
+                </div>}
+                {!isInstagram && <div className={styles.emptyspace_mobile}></div>}
+                
+                <h1 className = {styles.linkdatitle_mobile}>⭐ Important Links ⭐</h1>
+                <div className = {styles.adcon}><Linkda/></div>
             </div> 
 
-            <h1 className = {styles.title}>Get off-campus placement drives & internship updates</h1>
-            <h1 className = {styles.titleMobile}>Recent off-campus drives <span>👇</span></h1>
             
-            <div className = {styles.gridhome}>
+            <div className = {styles.home_grid}>    
                 <div className = {styles.center}>
-                    <GetData/>
+                <h1 className = {styles.title_mobile}>Recent off-campus drives <span>👇</span></h1>
+                    <Jobdash/>
                 </div>  
+
                 
                 {/* For desktop view only */}
                 <div className = {styles.sidebar}>
-                    <br /> <br />
-                    <h1 className={styles.linead}>Important Links 🔥</h1>
-                    <br />
-                    <div className={styles.adcon}><MainAd/></div>
-                    <div className={styles.adcon}><Ads/></div> 
+                    <Sidebar/>
                 </div>    
             </div>
 
             {/* For Mobile view only */}
             <div className="viewMobile">
-                <div className={styles.adcon}><TelegramJob/></div>
+                <Telegrambanner/>
             </div>
-            
             <Feedback/>
             <Footer/>          
         </div>

@@ -2,15 +2,15 @@ import React from "react"
 import ContentLoader from "react-content-loader"
 
 
-import "../../CSS/linkUi.css"
-
+// import "../../CSS/linkUi.css"
+import styles from "./loader.module.scss"
 
 
 const JdLoader = (props) => (
   <div>
-  <div className="loader-laptop">
+  <div className={styles.loader_laptop}>
   <ContentLoader 
-    className="loader"
+    className={styles.loader}
     speed={2}
     width={400}
     height={1400}
@@ -33,9 +33,9 @@ const JdLoader = (props) => (
     <rect x="0" y="870" rx="0" ry="30" width="800" height="400" /> 
   </ContentLoader>
   </div>
-    <div className="loader-mobile">
+    <div className={styles.loader_mobile}>
   <ContentLoader 
-    className="loader"
+    className={styles.loader}
     speed={2}
     width={3000}
     height={1000}

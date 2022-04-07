@@ -1,0 +1,239 @@
+.backhome_btn {
+  background-color: #e1ebff;
+  width: 130px;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 10px;
+  margin: 30px 50px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #2e57e8;
+
+  @media screen and (max-width: 768px) {
+    margin: 30px 20px 10px;
+    font-size: 1rem;
+    padding: 9px;
+    width: 100px;
+  }
+
+  &:hover {
+    background-color: #6b89f5;
+    color: #e1ebff;
+  }
+}
+
+.jobddesc_con {
+  display: grid;
+  grid-template-columns: 65% 35%;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 100%;
+  }
+}
+
+.jd_con {
+  padding: 30px 30px 0px 50px;
+  text-align: left;
+  color: #2d2d2d;
+  //   font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  list-style-position: inside;
+
+  p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+    color: #003049;
+    list-style-position: outside;
+    margin-left: 0px;
+    line-height: 1.8rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+      line-height: 1.4rem;
+    }
+  }
+
+  ul {
+    margin-left: 40px;
+
+    @media screen and (max-width: 768px) {
+      margin-left: 15px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 20px 20px 0px 20px;
+  }
+}
+
+.jd_sidebar {
+  padding: 0px 40px 10px 30px;
+  border-left: 0.6px solid #eee;
+
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding-top: 40px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.jd_title {
+  font-size: 2.5rem;
+  color: #000;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.7rem;
+  }
+}
+
+.jd_details {
+  margin: 40px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  color: #003049;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+.jd-details span {
+  margin-top: 3px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: #e1ebff;
+  border: 1px solid #eee;
+  text-align: left;
+  color: #000;
+  padding: 10px 20px;
+}
+td {
+  border: 1px solid #eee;
+  text-align: left;
+  padding: 9px 20px;
+  font-weight: 500;
+}
+
+tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+.lastdate {
+  color: red;
+  font-size: 1.4rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.detail_con {
+  margin: 50px 0px 20px;
+  padding: 0px 30px 20px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 16px;
+
+  p {
+    color: #2c2c2c;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 20px 0px 0px;
+    padding: 0px 2px;
+    border: none;
+  }
+}
+
+.jd_subheading {
+  margin: 20px 0px 15px;
+  font-size: 2rem;
+  text-align: left;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 6 00;
+  text-decoration: underline;
+
+  @media screen and (max-width: 768px) {
+    margin: 20px 0px 10px;
+    font-size: 1.3rem;
+  }
+}
+
+@mixin btn() {
+  padding: 15px;
+  width: 100%;
+  margin: 0px 0px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2557a7;
+  cursor: pointer;
+
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 768px) {
+    padding: 13px;
+    font-size: 1.1rem;
+  }
+}
+
+.jd_apply_btn {
+  @include btn();
+
+  a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color: #122f5d;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.apply_mobile_btn {
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  a {
+    color: #0000ff;
+    font-weight: 800;
+    text-decoration: underline;
+  }
+}
+
+.jd_share_btn {
+  @include btn();
+  background-color: #122f5d;
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.jd_copy_btn {
+  @include btn();
+  background-color: #e4e2e0;
+  color: #2d2d2d;
+}
+
+.jd-mobile {
+  display: none;
+}

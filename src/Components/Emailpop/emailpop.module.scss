@@ -1,0 +1,98 @@
+.email-con {
+  height: 520px;
+  width: 500px;
+
+  margin: 70px auto;
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+}
+
+.email-con p {
+  font-size: 1.4rem;
+  padding: 20px;
+  font-weight: 600;
+  color: #4f44e0;
+}
+
+/* /// */
+.email-dropbtn {
+  cursor: pointer;
+  margin: 8px auto;
+  border: 2px solid #e3e3e3;
+  color: #000;
+  text-align: left;
+}
+
+.email-dropdown {
+  margin: 0px auto;
+  min-width: 100%;
+}
+
+.dropdown-content {
+  position: absolute;
+  margin: 0px auto;
+  background-color: #f9f9f9;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content span {
+  margin: 0px auto;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 0.5px solid #0068ff;
+}
+
+.dropdown-content span:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.dropdown:hover .email-dropbtn {
+  border: 2px solid #0068ff;
+}
+.email-btn {
+  margin-bottom: 10px;
+}
+
+.point {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-align: left;
+  margin-left: 20px;
+}
+.point b {
+  color: red;
+}
+.error-msg {
+  font-size: 1rem;
+  padding: 0px;
+}
+.ignore {
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 0px;
+  background-color: #121212;
+  margin-bottom: 0px;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .ignore {
+    font-size: 1rem;
+  }
+  .email-con p {
+    font-size: 1.2rem;
+  }
+}

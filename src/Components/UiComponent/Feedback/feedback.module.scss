@@ -1,0 +1,46 @@
+@mixin feedback_btn() {
+  padding: 11px;
+  width: 100%;
+  margin: 16px 0px 0px;
+
+  border-radius: 6px 0px 0px 6px;
+  background-color: #fff;
+  border: 1px solid #121212;
+
+  cursor: pointer;
+
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.feedback_con {
+  width: 100%;
+  background-color: rgb(238, 244, 254);
+  border-bottom: 1px solid #121212;
+  padding: 20px 40px;
+}
+
+.feedback_grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+  margin: 0px auto;
+  max-width: 40%;
+
+  @media (max-width: 600px) {
+    max-width: 80%;
+  }
+}
+
+.feedback_good {
+  @include feedback_btn();
+}
+.feedback_bad {
+  @include feedback_btn();
+  border-radius: 0px 6px 6px 0px;
+}
+
+#toggle_form {
+  display: block;
+}

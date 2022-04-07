@@ -1,0 +1,89 @@
+.telegram_con {
+  background-color: #fcfcfc;
+  text-align: left;
+
+  padding: 15px 10px 14px 10px;
+  max-width: 92%;
+  margin: 20px auto;
+
+  border-radius: 8px;
+  //   font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  border: 2px solid #0088cc;
+  cursor: pointer;
+  //   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+  //     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 100%;
+    padding: 13px 13px 5px 13px;
+  }
+}
+
+.telegram_details {
+  h2 {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+      font-weight: 550;
+      margin: 0px 0px 8px;
+    }
+  }
+
+  &:hover {
+    color: #000;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+      line-height: 1.25rem;
+      font-weight: 500;
+      color: #333333;
+    }
+  }
+
+  span {
+    font-size: 0.9rem;
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.btn {
+  background-color: #0088cc;
+  border: none;
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-top: 14px;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    background-color: #0e76a8;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+
+.telegram_logo {
+  display: block;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

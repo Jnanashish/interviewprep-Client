@@ -1,0 +1,18 @@
+.loader {
+  max-width: 85%;
+}
+.loader_laptop {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .loader {
+    max-width: 92%;
+  }
+  .loader-laptop {
+    display: block;
+  }
+  .loader-mobile {
+    display: none;
+  }
+}
