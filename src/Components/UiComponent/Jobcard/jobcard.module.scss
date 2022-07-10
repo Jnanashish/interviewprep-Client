@@ -1,37 +1,58 @@
 .jobcard_con {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 15% 85%;
+
   background-color: #fff;
   box-shadow: 0px 4px 10px 0px rgba(79, 114, 205, 0.15);
-  padding: 19px 15px 21px 0px;
-  min-height: 80px;
-  margin: 30px auto;
-  text-align: left;
+  padding: 22px 15px 22px 0px;
   cursor: pointer;
-  font-family: "IBM Plex Sans", sans-serif;
-  border: 1px solid #fff;
+  margin: 22px auto;
+
+  text-align: left;
+  font-family: poppins, Helvetica,sans-serif;
+
+  border-radius: 0.75rem;
+  border: 1px solid rgba(218, 223, 231, 1);
+
+  button {
+    display: none;
+  }
 
   &:hover {
-    border: 1px solid #bebebe;
+    border: 1px solid #111;
+
+    button{
+      display: block;
+    }
   }
 
   @media (max-width: 600px) {
-    padding: 15px 10px;
-    margin: 0px auto 20px;
+    grid-template-columns: 20% 80%;
+    padding: 14px 10px;
+    margin: 0px auto 12px;
     border-radius: 8px;
+    box-shadow: none;
+
+      &:hover {
+        button {
+          display: none;
+        }
+      }
   }
 }
 
 .companylogo_con {
-  align-self: center;
+  align-self: start;
   justify-self: center;
 
   grid-column: 1;
   grid-row: 1/3;
-
+ 
   img {
-    width: 55px;
+    width: 50px;
     place-self: center;
+    border-radius: 50px;
+    margin-top: 5px;
   }
 
   @media (max-width: 600px) {
@@ -44,22 +65,26 @@
       width: 33px;
     }
   }
-}
+} 
 
 .jobtitle {
   grid-column: 2/6;
   grid-row: 1;
 
-  font-size: 1.4rem;
-  color: #130b43;
-  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.875rem;
+  color: #121926;
+  font-weight: 500;
+
   margin: 0px 0px 12px;
 
   @media (max-width: 600px) {
     font-size: 1.1rem;
-    margin: 0px 0px 10px;
+    line-height: 1.4rem;
+    margin: 0px 0px 12px 2px;
   }
 }
+
 .jobdetails {
   grid-column: 2/6;
   grid-row: 2;
@@ -79,7 +104,7 @@
 
   p {
     font-family: poppins, Helvetica, sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #3f3a5a;
     font-weight: 400;
 
@@ -91,21 +116,45 @@
   h5 {
     font-family: poppins, Helvetica, sans-serif;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #121212;
 
     @media (max-width: 600px) {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       justify-self: end;
     }
+
   }
 
   @media (max-width: 600px) {
     grid-template-columns: 18% 82%;
-    gap: 9px;
-    line-height: 1.03rem;
+    gap: 10px;
+    line-height: 1.08rem;
   }
 }
+
+
+.apply_btn{
+  grid-column: 2;
+  grid-row: 2;
+
+  width: 120px;
+  height: 40px;
+  margin-right: 10px;
+
+  align-self: end;
+  justify-self: end;
+
+  border-radius: 0.4rem;
+  border: none;
+  cursor: pointer;
+
+  background-color: #0069ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 
 .mobilejd_btn {
   display: none;
@@ -120,30 +169,3 @@
     width: 20px;
   }
 }
-
-@media (max-width: 600px) {
-  // .linkCon {
-  //   margin: 19px auto;
-  //   max-width: 93%;
-  //   padding: 12px 10px 12px 10px;
-  // }
-}
-
-// .lpjd_btn {
-//   grid-column: 5;
-//   grid-row: 3;
-//   color: #ffffff;
-//   background-color: #604fcd;
-//   padding: 12px;
-//   font-size: 1rem;
-//   border: none;
-//   border-radius: 4px;
-//   cursor: pointer;
-//   margin-top: 6px;
-//   margin-right: 20px;
-//   margin-bottom: 10px;
-
-//   @media (max-width: 600px) {
-//     display: none;
-//   }
-// }

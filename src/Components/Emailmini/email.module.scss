@@ -2,31 +2,30 @@
   background-color: #e1ebff;
   max-width: 100%;
   margin: 0px auto 30px;
-  border: 1px solid #eee;
-  border-radius: 6px;
-  padding: 15px 15px;
-  text-align: center;
+  border-radius: 10px;
+  padding: 20px 25px;
+  text-align: left;
 
   p {
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 1.2rem;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    color: #000;
 
     @media (max-width: 600px) {
       font-size: 1.1rem;
     }
   }
 }
+
 .email_input {
   margin-bottom: 8px;
   width: 100%;
   box-shadow: 0px 6px 22px 0px rgba(221, 230, 237, 0.4);
   border: 1px solid #e3e3e3;
-  font-size: 14px;
-  padding: 10px 12px;
-  border-radius: 6px;
+  font-size: 0.8rem;
+  padding: 10px;
+  border-radius: 8px;
 
   &:focus {
     outline: none;
@@ -34,27 +33,26 @@
   }
 
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 0.84rem;
     width: 93%;
     padding: 10px;
   }
 }
 
-.email_btn {
+.submit_btn {
   width: 100%;
   font-weight: 600;
-  background-color: #048eff;
+  background-color: #0066ff;
   border: 1px solid #0068ff;
-  font-size: 16px;
-  padding: 12px;
+  font-size: 0.9rem;
+  padding: 10px;
   border-radius: 6px;
   color: #fff;
-  box-shadow: 0px 16px 32px 0px rgba(221, 230, 237, 0.4);
   cursor: pointer;
   margin-top: 12px;
 
   &:hover {
-    background-color: #00a088;
+    background-color: #002C9B;
     border: 1px solid #00a088;
   }
 
@@ -65,9 +63,9 @@
 }
 
 .error_msg {
-  font-family: "Poppins", sans-serif;
   color: #eb5757;
 }
-.thank {
+
+.thank_msg {
   font-size: 1.7rem;
 }

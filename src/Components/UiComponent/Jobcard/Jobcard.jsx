@@ -4,12 +4,11 @@ import React from 'react'
 import styles from "./jobcard.module.scss"
 
 // import static images
-import arrowRight from "../../../Image/arrow-right.png"
 import logoimg from "../../../Image/logoimage.png";
 
 
 const Jobcard = (props) =>{ 
-    const {title, degree, batch, imagePath, jobtype} = props.data
+    const {title, degree, batch, imagePath, jobtype, jdpage} = props.data
 
     return (
         <div className={styles.jobcard_con}>
@@ -24,8 +23,8 @@ const Jobcard = (props) =>{
                 <div className={styles.jobdetails_item}><h5>Batch :</h5><p>{batch}</p></div>
                 <div className={styles.jobdetails_item}><h5>Jobtype : </h5><p>{jobtype}</p></div>
             </div>
-            
-            <img className = {styles.mobilejd_btn} src={arrowRight} alt="Right arrow" />
+            {jdpage==="false" && <button className={styles.apply_btn}>Apply Now</button>}
+            {jdpage==="true" && <button className={styles.apply_btn}>View Job</button>} 
         </div>
     )
 }

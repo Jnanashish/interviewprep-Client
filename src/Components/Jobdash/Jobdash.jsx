@@ -3,7 +3,7 @@ import React ,{useState, useEffect} from 'react'
 import Dropdown from 'rc-dropdown';
 import Menu, { Item as MenuItem, Divider } from 'rc-menu';
 
-// import icons
+// import icons from fontawersome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faChevronDown} from '@fortawesome/free-solid-svg-icons'
 
@@ -14,10 +14,9 @@ import styles from "./jobdash.module.scss"
 // import components
 import LinkMid from './Linkmid'
 import Jobcardloader from '../Loader/Jobcardloader'
-// import Telegrambanner from "../Telegram/Telegrambanner"
 import LinkimgDa from "../LinkimgDa/LinkimgDa"
 import Newjobloader from '../Loader/Newjobloader'
-import Telegramct from "../Telegramct/Telegramct"
+
 
 // methods for API Call
 import {getjdData, getjdBatchData, getjdDegreeData, getjdJobtypeData, getcompanynamedata} from "../../Helper/Jdapicall"
@@ -31,7 +30,7 @@ const Jobdash = () => {
     const [callcnt, setCallcnt] = useState(1);
     const [companyname, setCompanyname] = useState("")
 
-
+    // load all job description data with page number
     const loadAlljdData = () => {
         getjdData(pagenum).then(result => {
             if(!result){
@@ -45,14 +44,14 @@ const Jobdash = () => {
             }
             setData([...data, ...result.data])
             setShowloader(false)
-            localStorage.setItem('links', JSON.stringify(result.data));
+            localStorage.setItem('links', JSON.stringify(result.data))
         })
     } 
-    
+    // intial jd loading with 1 as pagenum
     useEffect(() => {loadAlljdData()}, [pagenum])
 
     window.onscroll = () =>{
-        if(loaddata && window.innerHeight + document.documentElement.scrollTop + 20 > document.documentElement.offsetHeight){
+        if(loaddata && window.innerHeight + document.documentElement.scrollTop + 250 > document.documentElement.offsetHeight){
             setpagenum()
             setShowloader(true)
         }
@@ -60,6 +59,7 @@ const Jobdash = () => {
     const setpagenum = () => setPagenum(pagenum + 1)
     // const setpagenum = () => setPagenum(pagenum)
 
+    // get job data based in batch
     const getBatchData = async(batch) =>{
         setData([])
         getjdBatchData(batch).then(result => {
@@ -75,6 +75,7 @@ const Jobdash = () => {
         })
     }   
 
+    // get job data based in degree
     const getDegreeData = async(deg) =>{
         setData([])
         getjdDegreeData(deg).then(result => {
@@ -90,6 +91,7 @@ const Jobdash = () => {
         })
     }   
 
+    // get job data based in role
     const getRoleData = async(role) =>{
         setData([])
         getjdJobtypeData(role).then(result => {
@@ -106,7 +108,6 @@ const Jobdash = () => {
     }
 
     const getCompanyData = async() =>{
-        console.log(companyname);
         setData([])
         getcompanynamedata(companyname).then(result => {
             console.log(result);
@@ -130,7 +131,7 @@ const Jobdash = () => {
     }
 
     const batchmenu = (
-        <Menu>
+        <Menu className = {styles.dropdown_con}>
             <MenuItem  onClick = {() => {clearfilter()}} className="dropdown_item" key="8">
                 <h3>Clear filter</h3>
             </MenuItem>
@@ -166,7 +167,7 @@ const Jobdash = () => {
     );
 
     const degreemenu = (
-        <Menu>
+        <Menu className = {styles.dropdown_con}>
             <MenuItem  onClick = {() => {clearfilter()}} className="dropdown_item" key="8">
                 <h3>Clear filter</h3>
             </MenuItem>
@@ -194,7 +195,7 @@ const Jobdash = () => {
     );
 
     const jobtypeemenu = (
-        <Menu>
+        <Menu className = {styles.dropdown_con}>
             <MenuItem  onClick = {() => {clearfilter()}} className="dropdown_item" key="8">
                 <h3>Clear filter</h3>
             </MenuItem>
@@ -213,6 +214,10 @@ const Jobdash = () => {
     return (
         <div>   
             <div className={styles.filter}>
+                {/* For mobile device only  */}
+                <h4 className={styles.m_tagline}>
+                    One place solution to get Off Campus <b>Internship</b> and <b>Job</b> Updates.
+                </h4>
                 <div className={styles.search_mobile_flex}>
                 <h2 className={styles.filter_text}>Filter By : </h2>
                 <div className={styles.dropdown}>
@@ -222,7 +227,7 @@ const Jobdash = () => {
                         animation="slide-up"
                     >
                     <button className={styles.dropdown_btn}>Batch <FontAwesomeIcon className={styles.icon} icon={faChevronDown}/></button>
-                </Dropdown>
+                    </Dropdown>
                 </div>
 
                 <div className={styles.dropdown}>
@@ -232,7 +237,7 @@ const Jobdash = () => {
                         animation="slide-up"
                     >
                     <button className={styles.dropdown_btn}>Degree <FontAwesomeIcon className={styles.icon} icon={faChevronDown}/></button>
-                </Dropdown>
+                    </Dropdown>
                 </div>
 
                 <div className={styles.dropdown}>
@@ -242,7 +247,7 @@ const Jobdash = () => {
                         animation="slide-up"
                     >
                     <button className={styles.dropdown_btn}>Job Type <FontAwesomeIcon className={styles.icon} icon={faChevronDown}/></button>
-                </Dropdown>
+                    </Dropdown>
                 </div>    
                 </div>
 
@@ -252,28 +257,26 @@ const Jobdash = () => {
                     className={styles.searchcompany} 
                     value = {companyname}
                     onChange = {(e) => setCompanyname(e.target.value)}
-                    placeholder='Search Job with company name' 
+                    placeholder='Search Jobs with company name' 
                 />   
                 <button onClick={getCompanyData} className={styles.search_btn}><FontAwesomeIcon icon={faSearch} /></button>  
                 </div> 
 
             </div>
 
+            <h1 className = {styles.title_mobile}>
+                Recent off-campus drives : 
+            </h1>
 
             {data.length === 0 && <Jobcardloader/> }   
             {data.map(item => { 
                 return(   
                     <div>
-                        {itemCount%12 === 0 && <LinkimgDa count={0}/>} 
+                        {itemCount%12 === 1 && <LinkimgDa count={0}/>} 
                         {itemCount%12 === 3 && <LinkimgDa count={1}/>} 
-                        {itemCount%12 === 6 && <LinkimgDa count={2}/>} 
-                        {itemCount%12 === 9 && <LinkimgDa count={3}/>} 
-
-                        <div className={styles.telgram_con_mobile}>
-                            {itemCount>1 && itemCount%8 === 0 && <Telegramct/>}
-                            {itemCount === 3 && <Telegramct/>}
-                            {/* {itemCount>1 && itemCount%10 === 0 && <Telegrambanner/>}  */}
-                        </div>
+                        {itemCount%12 === 5 && <LinkimgDa count={0}/>} 
+                        {itemCount%12 === 7 && <LinkimgDa count={1}/>} 
+                        {itemCount%12 === 11 && <LinkimgDa count={0}/>} 
 
                         <LinkMid 
                             cnt = {itemCount++} data = {item}
@@ -286,4 +289,5 @@ const Jobdash = () => {
         </div>
     )
 }
+
 export default Jobdash;

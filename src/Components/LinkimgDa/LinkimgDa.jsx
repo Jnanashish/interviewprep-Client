@@ -20,7 +20,7 @@ const LinkimgDa = (props) => {
             localStorage.setItem('links', JSON.stringify(result.data));
         })
     } 
-    console.log(adData);
+
     return (
         <div>
             {props.count === 0 && adData.length > 0 && 

@@ -4,7 +4,6 @@ import React from 'react';
 import styles from "./linkimgcard.module.scss"
 
 const Linkimgcard = (props) => {
-    console.log(props);
     return (   
         <div className={styles.adlinkimg_con}>
             <div className = {styles.img_con}>

@@ -1,53 +1,36 @@
-.header {
-  display: flex;
-  padding: 20px 70px 20px;
+.header_con{
   box-shadow: 0px 0 20px -10px #888;
-  justify-content: space-between;
+  width: 100%;
+}
+
+.header {
+  padding: 15px 50px;
+  max-width: 1280px;
+  margin: 0px auto;
+   
+  display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   @media (max-width: 768px) {
-    padding: 12px 0px 8px;
-    box-shadow: none;
-    flex-direction: column;
-    background-color: #1c2024;
-    border: none;
+    padding: 22px 12px 16px ;
+    border-bottom: 0.6px solid #888;
+    background-color: #fff;
   }
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 2rem;
-  font-family: "Nunito Sans", sans-serif;
-  span {
-    font-weight: 800;
-    color: #0000ff;
+  img {
+    width: 170px;
   }
 
   @media (max-width: 768px) {
-    width: 180px;
-    font-size: 1.6rem;
-    margin: 0px auto;
-    color: #fff;
+    font-size: 1.5rem;
 
-    span {
-      color: #00acee;
+    img{
+      width: 150px;
     }
-  }
-}
-
-.icon {
-  width: 32px;
-  height: 32px;
-  margin-top: 3px;
-  margin-left: 8px;
-  align-self: flex-end;
-
-  :hover {
-    cursor: pointer;
-  }
-
-  @media screen and (max-width: 768px) {
-    display: none;
   }
 }
 
@@ -55,7 +38,36 @@
   align-self: flex-end;
 
   @media (max-width: 768px) {
-    align-self: center;
-    margin-top: 10px;
+    display: none;
   }
 }
+
+
+// icon container for mobile 
+.icon_con_mb {
+  align-self: flex-end;
+  display: none;
+
+  img{
+    width: 30px;
+    height: 30px;
+    margin-top: 0px;
+    margin-right: 8px;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-top: 3px;
+  margin-left: 5px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+

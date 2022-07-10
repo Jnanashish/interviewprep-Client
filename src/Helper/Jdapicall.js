@@ -3,7 +3,7 @@ import { API } from "../Backend"
 
 // get data from database
 export const getjdData = (pagenum) =>{
-    return fetch(`${API}/jd/get?page=${pagenum}&size=5`, {method : "GET"})
+    return fetch(`${API}/jd/get?page=${pagenum}&size=10`, {method : "GET"})
     .then(res => {
         return res.json()
     })

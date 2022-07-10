@@ -3,13 +3,11 @@ import React from 'react'
 // import css 
 import styles from "./telegrambanner.module.scss"
 
-// import telegram logo
-import telegramlogo from "../../Image/telegramlogo.png";
 
 const Telegrambanner = () => {
     return (
         <div className = {styles.telegram_con}>
-           <img className = {styles.telegram_logo} src={telegramlogo} alt="Telegram logo" />
+           <img className = {styles.telegram_logo} src="https://img.icons8.com/fluency/240/000000/telegram-app.png"  alt="Telegram logo" />
            <div className = {styles.telegram_details}>
                <h2>Join interviewPrep on <b>Telegram</b></h2>
                <p><span>🤯 </span> Get resources to prepare for interviews</p>

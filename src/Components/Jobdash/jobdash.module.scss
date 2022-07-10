@@ -1,11 +1,32 @@
 .filter {
   text-align: left;
-  max-width: 85%;
+  max-width: 100%;
   margin: 0px auto 30px;
-
+  
   @media (max-width: 600px) {
-    max-width: 96%;
+    max-width: 100%;
     margin: 0px auto 10px;
+    background-color: #e7edf9;
+
+    border-radius: 0px 0px 10px 10px;
+    padding: 30px 30px 10px;
+  }
+}
+
+.m_tagline{
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    margin-bottom: 25px;
+  }
+
+  b{
+    color: #0066ff;
   }
 }
 
@@ -13,23 +34,22 @@
   @media (max-width: 600px) {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
+
 .dropdown {
   display: inline-block;
   position: relative;
 }
 
-.icon {
-  margin-left: 5px;
-}
 
 .filter_text {
   display: inline-block;
   position: relative;
   margin-right: 20px;
-  font-size: 18px;
+  font-size: 1.2rem;
   @media (max-width: 600px) {
     display: none;
   }
@@ -38,43 +58,65 @@
 .dropdown_item {
   padding: 15px;
 }
-h2 {
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 14px;
-  text-align: center;
-  cursor: pointer;
-  @media (max-width: 600px) {
-    font-size: 13px;
+
+.dropdown_con{
+  h2 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    cursor: pointer;
+  
+    @media (max-width: 600px) {
+      font-size: 0.8rem;
+    }
   }
 }
 
+
 .dropdown_btn {
-  min-width: 160px;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: 6px;
-  padding: 10px 30px 10px 30px;
+  min-width: 150px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "IBM Plex Sans",
+  sans-serif;
+  
+  padding: 12px 30px;
   background-color: #e1ebff;
+  
+
   cursor: pointer;
   margin-right: 25px;
-  // color: #2e57e8;
   color: #3d3d3d;
   border: none;
-  margin-bottom: 15px;
+  border-radius: 50px;
+
+  margin-bottom: 22px;
 
   &:hover {
-    //   background-color: rgb(238, 244, 254);
     background-color: #c1d2f6;
     color: #121212;
   }
 
   @media (max-width: 600px) {
-    min-width: 90px;
-    padding: 10px 12px;
-    margin-right: 5px;
-    font-size: 15px;
+    min-width: 10px;
+    padding: 12px 17px;
+    margin-right: 0px;
+    font-size: 0.8rem;
+    background-color: #fff;
+    margin-bottom: 15px;
   }
 }
+
+
+.icon {
+  margin-left: 5px;
+  font-size: 0.8rem;
+
+  @media (max-width: 600px) {
+    font-size: 0.7rem;
+  }
+}
+
 
 .telgram_con_mobile {
   width: 92%;
@@ -88,42 +130,49 @@ h2 {
 
 h3 {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 14px;
+  font-size: 0.9rem;
   text-align: center;
   cursor: pointer;
   color: red;
 }
-@mixin searchtheme() {
-  height: 50px;
-  font-size: 18px;
-  padding: 15px 30px;
-  margin-top: 10px;
-  // border: 1px solid #0000ff;
-  border-right: none;
-  color: #0000ff;
-  background-color: #fff;
-  border: none;
-  // background-color: #e1ebff;
-  box-shadow: 0px 4px 5px 0px rgba(79, 114, 205, 0.15);
 
-  @media (max-width: 600px) {
-    padding: 12px 20px;
-    font-size: 16px;
-    height: 45px;
-    margin: 0px 0px 15px;
-  }
-}
+
 
 .search_con {
   width: 100%;
   display: grid;
   grid-template-columns: 85% 15%;
   margin: 0px auto;
+
   @media (max-width: 600px) {
-    max-width: 95%;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 85% 15%;
   }
 }
+
+
+@mixin searchtheme() {
+  height: 50px;
+  font-size: 1.1rem;
+  padding: 15px 20px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+
+  border-right: none;
+  color: #0066ff;
+  background-color: #fff;
+  border: 0.6px solid #0066ff;
+
+  @media (max-width: 600px) {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    height: 45px;
+    margin: 0px 0px 25px;
+    width: 100%;
+    background-color: #fff;
+    border: 0px solid #0066ff;
+  }
+}
+
 .searchcompany {
   @include searchtheme();
   border-radius: 8px 0px 0px 8px;
@@ -131,18 +180,15 @@ h3 {
   align-self: center;
   &:focus {
     outline: none;
-    // border: 1.2px solid #000;
-    // border-right: none;+
   }
 }
+
 .search_btn {
   @include searchtheme();
   align-self: center;
   border-radius: 0px 8px 8px 0px;
-
+  padding: 12px 0px;
   cursor: pointer;
-  // background-color: #e1ebff;
-  // border: 1px solid #2557a7;
   border-left: none;
 
   &:hover {
@@ -159,5 +205,22 @@ h3 {
 
   @media (max-width: 768px) {
     display: block;
+  }
+}
+
+
+.title_mobile {
+  display: none;
+
+  @media (max-width: 600px) {
+    width: 85%;
+    display: block;
+    text-align: left;
+    font-size: 1.4rem;
+    margin: 20px auto 20px;
+
+    .span {
+      font-size: 1.2rem;
+    }
   }
 }

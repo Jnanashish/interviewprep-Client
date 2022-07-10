@@ -1,15 +1,24 @@
 import React from 'react'
 
-//import css
+// import css
 import styles from "./header.module.scss"
+// imoport main logo
+import logo from "../../../Image/logo.svg"
+
+import { Link } from 'react-router-dom'
+
 
 const Header = () => {
     return (
-    <div>
+    <div className={styles.header_con}>
         <div className={styles.header}>
             <h1 className={styles.logo}>
-                Careers@<span children="logo-2nd-part">Tech</span>
+                <Link to = {`/`}>
+                    <img src={logo} alt="careersattech logo"/>
+                </Link>
             </h1>
+
+            {/* Social media icons for desktop view */}
             <div className={styles.icon_con}>
                 <a href="https://www.instagram.com/interviewprep.tech/" 
                     target="_blank" rel="noopener noreferrer">
@@ -32,7 +41,18 @@ const Header = () => {
                     <img 
                         className={styles.icon} 
                         src="https://img.icons8.com/color/240/000000/linkedin.png" 
-                        alt="telegram-logo"
+                        alt="linkedin-logo"
+                    />
+                </a>
+            </div>
+
+            {/* Telegram icon for mobile only  */}
+            <div className={styles.icon_con_mb}>
+                <a href="https://t.me/interviewpreptech" 
+                    target="_blank" rel="noopener noreferrer">
+                    <img 
+                        src="https://img.icons8.com/fluency/240/000000/telegram-app.png" 
+                        alt="telegram-logo"     
                     />
                 </a>
             </div>

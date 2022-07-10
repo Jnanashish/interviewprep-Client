@@ -1,6 +1,6 @@
 import React,{useState, useEffect}  from 'react'
 
-// method from API Call
+// methods from API Call
 import {getAdBannerData, countBannerClick} from "../../Helper/adapicall"
 
 // import css
@@ -9,8 +9,9 @@ import styles from "./bannerda.module.scss"
 
 const Bannerda = () => {
     useEffect(() => {loadAdBannerData()}, [])
-
     const [data, setData] = useState([]);
+
+    // load data of banners 
     const loadAdBannerData = () => {
         getAdBannerData().then(result => {
             setData(result)
@@ -22,10 +23,16 @@ const Bannerda = () => {
         <div>
             {data.map(item => { 
                 return(
-                <a onClick={() => countBannerClick(item._id)} href={item.link} target="_blank" rel="noopener noreferrer">
-                    <p className={styles.ad_text}>AD</p>
-                    <img className = {styles.bannerda_con} src={item.imagePath} alt="Ads Poster" />
-                </a>
+                    <a onClick={() => countBannerClick(item._id)} 
+                        href={item.link} target="_blank" rel="noopener noreferrer">
+                            {/* Show AD text on top of the banner  */}
+                            <p className={styles.ad_text}>Click here 👇</p>
+                            <img 
+                                className = {styles.bannerda_con} 
+                                src={item.imagePath} 
+                                alt="Ads Poster"                                
+                            />
+                    </a>
                 )
             })}
         </div>

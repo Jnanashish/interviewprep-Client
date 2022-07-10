@@ -1,0 +1,31 @@
+.notice_con{
+    width: 92%;
+    max-width: 1280px;
+    margin: 0px auto 50px;
+    padding: 30px 40px;
+    background-color: #e1ebff;
+    border-radius: 15px;
+
+    p{
+        line-height: 1.4rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 92%;
+        padding: 15px;
+        text-align: left;
+        margin-bottom: 30px;
+
+        p{
+            font-size: 0.9rem;
+            line-height: 1.2rem;
+        }
+
+        h1{
+            font-size: 1.4rem;
+        }
+    }
+}
+.notice_title{
+    margin-bottom: 15px;
+}
