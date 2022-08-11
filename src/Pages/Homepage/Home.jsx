@@ -5,7 +5,6 @@ import Header from '../../Components/UiComponent/Header/Header';
 import Jobdash from "../../Components/Jobdash/Jobdash"; 
 import Footer from '../../Components/UiComponent/Footer/Footer';
 import Telegrambanner from '../../Components/Telegram/Telegrambanner';
-// import Feedback from '../../Components/UiComponent/Feedback/Feedback';
 import Linkda from "../../Components/LinkDa/Linkda"
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import Topda from '../../Components/Topda/Topda';
@@ -21,7 +20,7 @@ import { faExternalLink } from '@fortawesome/free-solid-svg-icons'
 
 
 const Home = () => {
-    // Check if current device is instagram or not 
+    // Check if current device is instagram or not to show open in browser message
     var ua = navigator.userAgent || navigator.vendor || window.opera;
     var isInstagram = (ua.indexOf('Instagram') > -1) ? true : false;
 

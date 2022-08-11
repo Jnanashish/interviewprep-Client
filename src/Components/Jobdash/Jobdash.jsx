@@ -216,7 +216,7 @@ const Jobdash = () => {
             <div className={styles.filter}>
                 {/* For mobile device only  */}
                 <h4 className={styles.m_tagline}>
-                    One place solution to get Off Campus <b>Internship</b> and <b>Job</b> Updates.
+                    One place solution to get off-campus <b>Internship</b> and <b>Job</b> Updates 🚀.
                 </h4>
                 <div className={styles.search_mobile_flex}>
                 <h2 className={styles.filter_text}>Filter By : </h2>

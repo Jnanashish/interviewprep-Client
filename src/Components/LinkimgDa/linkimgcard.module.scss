@@ -28,6 +28,38 @@
     text-align: left;
   }
 }
+
+.adlinkimg_con_2 {
+  margin: 15px auto 0px auto;
+  max-width: 100%;
+  cursor: pointer;
+  background-color: #fff;
+  min-height: 100px;
+
+
+
+  font-family: poppins, Helvetica, sans-serif;
+
+
+  padding: 0px 20px 0px 0px;
+  border: 1px solid #0066ff;
+  border-radius: 8px;
+
+  &:hover {
+    border: 1px solid #0069ff;
+  }
+
+  @media (max-width: 600px) {
+    min-height: 0px;
+    padding: 12px 12px;
+    margin: 0px auto 20px;
+    border-radius: 8px;
+    max-width: 94%;
+    text-align: left;
+  }
+}
+
+
 .ads-link-img {
   border: 0.5px dashed #000;
   cursor: pointer;
@@ -53,6 +85,26 @@
     }
   }
 }
+.img_con_2 {
+  grid-column: 1;
+  grid-row: 1;
+  place-self: center;
+  align-self: center;
+  img {
+    width: 50px;
+  }
+
+  @media (max-width: 600px) {
+    width: 40px;
+    place-self: center;
+    grid-column: 1;
+    grid-row: 1;
+
+    img {
+      width: 35px;
+    }
+  }
+}
 
 .adlinkimg_title {
   grid-column: 2/6;
@@ -62,6 +114,24 @@
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    margin: 0px;
+    line-height: 1.24rem;
+    color: #0050ff;
+  }
+}
+
+.adlinkimg_title_2 {
+  grid-column: 2/6;
+  grid-row: 1;
+  color: #0066ff;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  align-self: start;
 
   @media (max-width: 600px) {
     font-size: 0.98rem;

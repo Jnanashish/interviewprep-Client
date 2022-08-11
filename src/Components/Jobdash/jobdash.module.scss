@@ -9,7 +9,7 @@
     background-color: #e7edf9;
 
     border-radius: 0px 0px 10px 10px;
-    padding: 30px 30px 10px;
+    padding: 25px 30px 0px;
   }
 }
 
@@ -21,12 +21,13 @@
 
     font-weight: 600;
     font-size: 1.5rem;
-    line-height: 1.9rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2rem;
     margin-bottom: 25px;
   }
 
   b{
-    color: #0066ff;
+    color: #0052cc;
   }
 }
 
@@ -76,7 +77,7 @@
 .dropdown_btn {
   min-width: 150px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   font-family: "IBM Plex Sans",
   sans-serif;
   
@@ -88,7 +89,7 @@
   margin-right: 25px;
   color: #3d3d3d;
   border: none;
-  border-radius: 50px;
+  border-radius: 15px;
 
   margin-bottom: 22px;
 
