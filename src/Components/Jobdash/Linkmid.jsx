@@ -1,112 +1,135 @@
-import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // import components
-import Jobcard from "../UiComponent/Jobcard/Jobcard.jsx" 
-import {countClickinJd, gettypeofad} from "../../Helper/Jdapicall"
+import Jobcard from "../UiComponent/Jobcard/Jobcard.jsx";
+import { countClickinJd } from "../../Helper/Jdapicall";
+import { useSelector } from "react-redux";
 
 // import css
-import styles from "./linkmid.module.scss"
+import styles from "./linkmid.module.scss";
 
 // react modal to show popup
-import ReactModal from 'react-modal';
-import Bannerda from "../BannerDa/Bannerda"
+import ReactModal from "react-modal";
 
 // import icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faXmark, faArrowRight } from '@fortawesome/free-solid-svg-icons'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { countBannerClick } from "../../Helper/adapicall";
 import { useHistory } from "react-router-dom";
 
 const LinkUI = (props) => {
-    const [adpoptype, setAdpoptype] = useState("none");
-    const [showModal, setShowModal] = useState(false)
-    const {id, link, jdpage} = props.data
+    const { id, link, jdpage } = props.data;
+
+    const [showModal, setShowModal] = useState(false);
+    const [showbtn, setShoebtn] = useState(false);
+
+    const adpoptype = useSelector((state) => state.linkimgda.dapoptype);
+    const bannerdadata = useSelector((state) => state.linkimgda.bannerda);
 
     let history = useHistory();
-    useEffect(() => { getadpoptype() }, [])
 
-    // Get type of ad need to show
-    const getadpoptype = async(role) =>{  
-        gettypeofad().then(result => {
-            if(!result){
-                console.log("Some error in getting adtype")
-            } else {
-                setAdpoptype("")
-                setAdpoptype(result[0].adpoptype);
-            }          
-        })
-    }
+    setTimeout(() => {
+        setShoebtn(true);
+    }, "1000");
 
-    const handleOpenModal = () =>{
-        setShowModal(true)
-    }
+    const handleOpenModal = () => {
+        setShowModal(true);
+    };
 
-    const handleCloseModal = () =>{
-        setShowModal(false)
-        if(jdpage === "true"){
-            history.push(`/jd/${id}`)
-        } else if(jdpage === "false"){
-            countClickinJd(id)
+    const handleCloseModal = () => {
+        setShowModal(false);
+        if (jdpage === "true") {
+            history.push(`/jd/${id}`);
+        } else if (jdpage === "false") {
+            countClickinJd(id);
             window.location.assign(link);
         }
-    }
+    };
 
-    const handleClosepopup = () =>{
-        setShowModal(false)
-    }
-    
-    return (  
+    const handleClosepopup = () => {
+        setShowModal(false);
+    };
+
+    return (
         <div>
             <div>
-                <ReactModal 
+                <ReactModal
                     isOpen={showModal}
-                    contentLabel="Minimal Modal Example"  
-                    className={styles.modal_con} 
-                >   
-                    <FontAwesomeIcon 
-                        onClick={handleClosepopup} 
-                        className={styles.cross_icon} 
-                        icon={faXmark}                  
-                    />
-                    <Bannerda/>
-                    <button 
-                        className={styles.close_btn} 
-                        onClick={handleCloseModal}>
-                            Redirect to Job page  
-                        <FontAwesomeIcon icon={faArrowRight}/>
-                    </button>
+                    contentLabel="Minimal Modal Example"
+                    className={styles.modal_con}>
+                    <div className={styles.modal_items}>
+                        <FontAwesomeIcon
+                            onClick={handleClosepopup}
+                            className={styles.cross_icon}
+                            icon={faXmark}
+                        />
+                        <div>
+                            {bannerdadata.map((item) => {
+                                return (
+                                    <a
+                                        key={item._id}
+                                        onClick={() =>
+                                            countBannerClick(item._id)
+                                        }
+                                        href={item.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer">
+                                        <p className={styles.ad_text}>
+                                            Click here 👇
+                                        </p>
+                                        <img
+                                            className={styles.bannerda_con}
+                                            src={item.imagePath}
+                                            alt="Ads Poster"
+                                        />
+                                    </a>
+                                );
+                            })}
+                        </div>
+                        {showbtn && (
+                            <button
+                                className={styles.close_btn}
+                                onClick={handleCloseModal}>
+                                Redirect to Job page
+                                <FontAwesomeIcon icon={faArrowRight} />
+                            </button>
+                        )}
+                    </div>
                 </ReactModal>
             </div>
 
-            <div className={styles.linkcard_con} > 
-                {jdpage === "true" && adpoptype === "none" &&  
-                    <Link to = {`/jd/${id}`}> 
-                        <Jobcard data = {props.data}/>
-                    </Link>}
-            
-                {jdpage === "true" && adpoptype !== "none" &&
-                    <div onClick={() =>handleOpenModal()}>
-                        <Jobcard data = {props.data}/>
-                    </div>}
+            <div className={styles.linkcard_con}>
+                {jdpage === "true" && adpoptype === "none" && (
+                    <Link to={`/jd/${id}`}>
+                        <Jobcard data={props.data} />
+                    </Link>
+                )}
 
-                {jdpage === "false" && adpoptype !== "none" &&
-                    <div onClick={() =>handleOpenModal()}>
-                        <Jobcard data = {props.data}/>
-                    </div>}
+                {jdpage === "true" && adpoptype !== "none" && (
+                    <div onClick={() => handleOpenModal()}>
+                        <Jobcard data={props.data} />
+                    </div>
+                )}
 
-                {jdpage === "false" && adpoptype === "none" &&
-                    <a onClick={() => countClickinJd(id)} 
-                        target="_blank" rel="noopener noreferrer" 
-                        href= {link}>
-                            <Jobcard data = {props.data}/>
-                    </a>}
+                {jdpage === "false" && adpoptype !== "none" && (
+                    <div onClick={() => handleOpenModal()}>
+                        <Jobcard data={props.data} />
+                    </div>
+                )}
+
+                {jdpage === "false" && adpoptype === "none" && (
+                    <a
+                        onClick={() => countClickinJd(id)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={link}>
+                        <Jobcard data={props.data} />
+                    </a>
+                )}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default LinkUI;  
-
-
- 
+export default LinkUI;

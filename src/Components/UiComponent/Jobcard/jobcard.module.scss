@@ -6,13 +6,14 @@
   box-shadow: 0px 4px 10px 0px rgba(79, 114, 205, 0.15);
   padding: 20px 15px 20px 0px;
   cursor: pointer;
-  margin: 22px auto;
+  // margin: 22px auto;
 
   text-align: left;
-  font-family: poppins, Helvetica,sans-serif;
+  font-family: poppins, Helvetica, sans-serif;
 
   border-radius: 0.75rem;
-  border: 1px solid rgba(218, 223, 231, 1);
+  // border: 1px solid rgba(218, 223, 231, 1);
+  border: 1px solid rgba(5, 6, 15, 0.06);
 
   button {
     display: none;
@@ -21,27 +22,25 @@
   &:hover {
     border: 1px solid #111;
 
-    button{
+    button {
       display: block;
     }
   }
 
   @media (max-width: 600px) {
     grid-template-columns: 20% 80%;
-    padding: 14px 10px;
-    margin: 0px auto 12px;
-    border-radius: 8px;
+    padding: 12px 10px;
+    margin: 0px auto 0px;
+    border-radius: 16px;
     box-shadow: none;
 
-      &:hover {
-        button {
-          display: none;
-        }
+    &:hover {
+      button {
+        display: none;
       }
+    }
   }
 }
-
-
 
 .companylogo_con {
   align-self: start;
@@ -49,7 +48,7 @@
 
   grid-column: 1;
   grid-row: 1/3;
- 
+
   img {
     width: 50px;
     place-self: center;
@@ -67,24 +66,24 @@
       width: 33px;
     }
   }
-} 
+}
 
-.logotext{
+.logotext {
   background-color: #207dff;
-  width: 38px;
-  height: 38px;
+  width: 37px;
+  height: 37px;
   margin: 0px auto;
   border-radius: 50px;
 
   display: flex;
   align-self: center;
   justify-self: center;
-  color: #FFF;
+  color: #fff;
   text-align: center;
 
-  p{
+  p {
     margin: 0px auto;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 500;
   }
 }
@@ -95,13 +94,16 @@
 
   font-size: 1.3rem;
   line-height: 1.875rem;
-  color: #121926;
-  font-family: 'Montserrat', sans-serif;
+  // color: #161e2e;
+  color: #05060f;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
+  line-height: 24px;
+  letter-spacing: normal;
   margin: 0px 0px 12px;
 
   @media (max-width: 600px) {
-    font-size: 1.1rem;
+    font-size: 1.06rem;
     line-height: 1.4rem;
     margin: 0px 0px 12px 2px;
   }
@@ -145,7 +147,6 @@
       font-size: 0.7rem;
       justify-self: end;
     }
-
   }
 
   @media (max-width: 600px) {
@@ -155,8 +156,7 @@
   }
 }
 
-
-.apply_btn{
+.apply_btn {
   grid-column: 2;
   grid-row: 2;
 
@@ -176,7 +176,6 @@
   font-size: 1rem;
   font-weight: 500;
 }
-
 
 .mobilejd_btn {
   display: none;

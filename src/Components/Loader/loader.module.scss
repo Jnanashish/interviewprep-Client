@@ -7,10 +7,13 @@
 
 @media (max-width: 600px) {
   .loader {
-    max-width: 94%;
+    margin-top: 10px;
+    max-width: 92%;
   }
   .loader_laptop {
     display: block;
+    max-width: 100%;
+    margin-top: 20px;
   }
   .loader_mobile {
     display: none;

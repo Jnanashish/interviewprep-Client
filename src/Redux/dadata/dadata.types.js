@@ -1,0 +1,3 @@
+export const ADD_DATA = "ADD_DATA";
+export const ADD_DAPOPTYPE_DATA = "ADD_DAPOPTYPE_DATA";
+export const ADD_BANNERDA_DATA = "ADD_BANNERDA_DATA";

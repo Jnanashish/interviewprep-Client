@@ -1,7 +1,7 @@
 .jobddesc_con {
   display: grid;
   grid-template-columns: 65% 35%;
-  
+
   width: 100%;
   max-width: 1280px;
   margin: 0px auto;
@@ -15,7 +15,7 @@
   padding: 30px 30px 0px 50px;
   text-align: left;
   color: #2d2d2d;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   list-style-position: inside;
 
   p {
@@ -39,7 +39,7 @@
   }
 
   @media screen and (max-width: 768px) {
-    padding: 20px 15px 0px 15px;
+    padding: 20px 16px 0px 16px;
   }
 }
 
@@ -56,7 +56,6 @@
 .jd_title {
   font-size: 2.5rem;
   color: #000;
-  margin-top: 20px;
 
   @media screen and (max-width: 768px) {
     font-size: 1.7rem;
@@ -109,7 +108,7 @@ tr:nth-child(odd) {
 .lastdate {
   color: red;
   font-size: 1.4rem;
-  
+
   h5 {
     margin-bottom: 20px;
   }
@@ -142,7 +141,7 @@ tr:nth-child(odd) {
   margin: 20px 0px 15px;
   font-size: 1.6rem;
   text-align: left;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 6 00;
   text-decoration: underline;
 
@@ -152,16 +151,15 @@ tr:nth-child(odd) {
   }
 }
 
-
-.apply_con{
+.apply_con {
   display: none;
-  a{
+  a {
     color: #0000ff;
 
-    &:hover{
+    &:hover {
       text-decoration: underline;
     }
-  }  
+  }
 }
 
 @mixin btn() {
@@ -199,15 +197,32 @@ tr:nth-child(odd) {
     display: none;
   }
 }
-.apply_mobile_btn {
-  display: block;
-    margin: 20px 0px;
-      font-size: 1.2rem;
-      font-weight: 600;
+.telegram_link {
+  display: none;
+  margin: 20px 0px 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+
   @media screen and (max-width: 768px) {
     display: block;
-    margin: 20px;
-    font-size: 1.2rem;
+    margin: 20px 0px;
+  }
+
+  span {
+    color: #0000ff;
+    font-weight: 800;
+    text-decoration: underline;
+  }
+}
+.apply_mobile_btn {
+  display: block;
+  margin: 10px 0px 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  @media screen and (max-width: 768px) {
+    display: block;
+    margin: 20px 0px;
+    font-size: 1rem;
     font-weight: 600;
   }
 
@@ -227,10 +242,34 @@ tr:nth-child(odd) {
     display: block;
   }
 }
+.whatsappshare {
+  padding: 12px 16px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: #fefbfb;
+  border: none;
+  border-radius: 12px;
+
+  p {
+    color: #494949;
+    font-weight: 600;
+    font-size: 1.1 rem;
+  }
+
+  i {
+    font-size: 1.5rem;
+    color: #4fce5d;
+    font-weight: 600;
+  }
+}
 
 .jd_copy_btn {
   @include btn();
-  background-color: #EFF2FB;
+  background-color: #eff2fb;
   color: #2d2d2d;
   margin-bottom: 20px;
 }

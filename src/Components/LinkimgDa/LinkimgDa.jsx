@@ -1,61 +1,97 @@
-import React, {useEffect, useState} from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
 // import components
-import Linkimgcard from "./Linkimgcard"
+import Linkimgcard from "./Linkimgcard";
+import Telegrambanner from "../Telegram/Telegrambanner";
 
 // import methods of api call
-import {getAdLinkImgData, countAdLinkImgClick} from "../../Helper/adapicall"
+import { countAdLinkImgClick } from "../../Helper/adapicall";
 
+import styles from "./linkimgcard.module.scss";
 
 const LinkimgDa = (props) => {
-    
-    useEffect(() => {
-        loadAdLinkData();
-    }, []);
-
-    const [adData, setAdData] = useState([]);
-    const loadAdLinkData = () => {
-        getAdLinkImgData().then(result => {
-            setAdData(result)
-            localStorage.setItem('links', JSON.stringify(result.data));
-        })
-    } 
+    const linkimgdadata = useSelector((state) => state.linkimgda);
+    const date = new Date();
+    const weeknum = date.getDay();
+    const flag = weeknum % 2;
 
     return (
         <div>
-            {props.count === 0 && adData.length > 0 && 
-                <a onClick={() => countAdLinkImgClick(adData[0]._id)} href={adData[0].link} target="_blank" rel="noopener noreferrer">
-                    <Linkimgcard 
-                        link={adData[0].link} title={adData[0].title} para={adData[0].para} imagePath={adData[0].imagePath}
-                    />
-                </a> 
-            }
+            {linkimgdadata.data.length === 0 && (
+                <div>
+                    {flag === 1 && (
+                        <div>
+                            <Telegrambanner />
+                        </div>
+                    )}
+                    {flag === 0 && (
+                        <div>
+                            <a
+                                className={styles.whatsapp_con}
+                                href="https://t.openinapp.co/careersattech-3">
+                                <p>
+                                    Join our Official Telegram channel for
+                                    regular updates on Jobs
+                                </p>
+                                <i className="fa-brands fa-telegram"></i>
+                            </a>
+                        </div>
+                    )}
+                    {/* {props.count === 0 && (
+                        <div>
+                            <a
+                                href="https://chat.whatsapp.com/D9o7nej6PoC9yRDIX6c4k5"
+                                className={styles.whatsapp_con}>
+                                <p>
+                                    Join our Whatsapp group for regular updates
+                                    on Internships and Jobs.
+                                </p>
+                                <i className="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    )} */}
+                </div>
+            )}
+            {linkimgdadata.data.length > 0 && (
+                <div>
+                    {props.count === 0 && linkimgdadata.data.length > 0 && (
+                        <a
+                            onClick={() =>
+                                countAdLinkImgClick(linkimgdadata.data[0]._id)
+                            }
+                            href={linkimgdadata.data[0].link}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <Linkimgcard
+                                link={linkimgdadata.data[0].link}
+                                title={linkimgdadata.data[0].title}
+                                para={linkimgdadata.data[0].para}
+                                imagePath={linkimgdadata.data[0].imagePath}
+                            />
+                        </a>
+                    )}
 
-            {props.count === 1 && adData.length > 1 && 
-                <a onClick={() => countAdLinkImgClick(adData[1]._id)} href={adData[1].link} target="_blank" rel="noopener noreferrer">
-                    <Linkimgcard 
-                        link={adData[1].link} title={adData[1].title} para={adData[1].para} imagePath={adData[1].imagePath}       
-                    />
-                </a>
-            }   
-
-            {props.count === 2 && adData.length > 2 && 
-                <a onClick={() => countAdLinkImgClick(adData[2]._id)} href={adData[2].link} target="_blank" rel="noopener noreferrer">
-                    <Linkimgcard 
-                        link={adData[2].link} title={adData[2].title} para={adData[2].para} imagePath={adData[2].imagePath}       
-                    />
-                </a>
-            }          
-
-            {props.count === 3 && adData.length > 3 && 
-                <a onClick={() => countAdLinkImgClick(adData[3]._id)} href={adData[3].link} target="_blank" rel="noopener noreferrer">
-                    <Linkimgcard 
-                        link={adData[3].link} title={adData[3].title} para={adData[3].para} imagePath={adData[3].imagePath}
-                    />
-                </a>
-            }             
+                    {props.count === 1 && linkimgdadata.data.length > 1 && (
+                        <a
+                            onClick={() =>
+                                countAdLinkImgClick(linkimgdadata.data[1]._id)
+                            }
+                            href={linkimgdadata.data[1].link}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <Linkimgcard
+                                link={linkimgdadata.data[1].link}
+                                title={linkimgdadata.data[1].title}
+                                para={linkimgdadata.data[1].para}
+                                imagePath={linkimgdadata.data[1].imagePath}
+                            />
+                        </a>
+                    )}
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default LinkimgDa;

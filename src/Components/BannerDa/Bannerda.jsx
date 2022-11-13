@@ -6,7 +6,6 @@ import {getAdBannerData, countBannerClick} from "../../Helper/adapicall"
 // import css
 import styles from "./bannerda.module.scss"
 
-
 const Bannerda = () => {
     useEffect(() => {loadAdBannerData()}, [])
     const [data, setData] = useState([]);

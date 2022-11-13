@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import "./newjobloader.css"
+import "./newjobloader.css";
 
 const HomePageLoader = () => {
     return (
-        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-    )
-}
+        <div className="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    );
+};
 
 export default HomePageLoader;
