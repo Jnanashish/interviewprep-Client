@@ -29,7 +29,9 @@ const Home = () => {
 
             {/* ---------------Main job description-------------- */}
             <div className={styles.home_grid}>
-                <div className={styles.center}>{/* <Jobdash /> */}</div>
+                <div className={styles.center}>
+                    <Jobdash />
+                </div>
 
                 {/* For desktop view only */}
                 <div className={styles.sidebar}>

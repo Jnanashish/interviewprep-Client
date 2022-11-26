@@ -1,32 +1,21 @@
-import {
-    ADD_DATA,
-    ADD_DAPOPTYPE_DATA,
-    ADD_BANNERDA_DATA,
-} from "./dadata.types";
+import { ADD_DASLINK_DATA, ADD_DASBANNER_DATA } from "./dadata.types";
 
-export const addlinkimgdadata = (data) => {
+// add das link data
+export const addDASLinkData = (dasLink) => {
     return {
-        type: ADD_DATA,
+        type: ADD_DASLINK_DATA,
         payload: {
-            data,
+            dasLink,
         },
     };
 };
 
-export const adddapoptypedata = (dapoptype) => {
+// add das banner data
+export const addDASBannerData = (dasBanner) => {
     return {
-        type: ADD_DAPOPTYPE_DATA,
+        type: ADD_DASBANNER_DATA,
         payload: {
-            dapoptype,
-        },
-    };
-};
-
-export const addbannerdadata = (dapoptype) => {
-    return {
-        type: ADD_BANNERDA_DATA,
-        payload: {
-            dapoptype,
+            dasBanner,
         },
     };
 };

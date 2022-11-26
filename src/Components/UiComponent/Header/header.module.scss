@@ -14,102 +14,20 @@
   align-items: center;
 
   @media (max-width: 768px) {
-    padding: 22px 16px 16px;
+    padding: 20px 16px 22px 16px;
     background-color: #fff;
   }
 }
 
 .logo {
-  img {
-    width: 170px;
-  }
-
   @media (max-width: 768px) {
-    font-size: 1.5rem;
-
-    img {
-      width: 140px;
-    }
+    font-size: 1.4rem;
   }
-}
-
-.icon_con {
-  align-self: flex-end;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
-// drawer container for mobile
-.drawericon {
-  display: none;
-  font-size: 1.4rem;
-
-  @media (max-width: 768px) {
-    display: block;
-  }
-}
-
-.icon {
-  width: 30px;
-  height: 30px;
-  margin-top: 3px;
-  margin-left: 5px;
-  align-self: flex-end;
-  cursor: pointer;
-}
-
-.drawer_con {
-  padding: 20px;
-  // max-height: 50vh;
-  font-family: "Inter", sans-serif;
-
-  h2 {
-    font-size: 1.3rem;
-    color: #121212;
-    margin-bottom: 8px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-}
-
-.telegram_para {
-  margin-bottom: 12px;
-}
-.browser_msg {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 30px 0px;
-  border: 1px solid rgba(5, 6, 15, 0.06);
-  background-color: #fcfcfc;
-  padding: 12px;
-  border-radius: 10px;
-
-  p {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #0050ff;
-  }
-}
-.telegram_btn {
-  border: 1px solid rgba(5, 6, 15, 0.06);
-  background-color: #f8f8f8;
-  padding: 16px;
-  border-radius: 16px;
-  margin-top: 10px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  p {
-    font-size: 1rem;
-    span {
-      font-weight: 700;
-    }
+  span {
+    background-color: #0069ff;
+    color: #fff;
+    padding: 0px 5px;
+    margin-left: 2px;
+    padding-bottom: 1px;
   }
 }

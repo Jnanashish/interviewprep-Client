@@ -11,52 +11,42 @@ import JobDesc from "./Components/Jobdescription/Jobdesc";
 import { useDispatch } from "react-redux";
 
 // import methods from helper
-import { getAdLinkImgData, getAdBannerData } from "./Helper/adapicall";
+import { getDasLinkDataAPI, getAdBannerData } from "./Helper/adapicall";
+
 import {
-    addlinkimgdadata,
-    adddapoptypedata,
-    addbannerdadata,
+    addDASLinkData,
+    addDASBannerData,
 } from "./Redux/dadata/dadata.actions";
-import { gettypeofad } from "./Helper/Jdapicall";
 
 function App() {
     const dispatch = useDispatch();
 
-    // get dalink data and store it in store on mounted
+    // get DAS data and store it in store on mounted
     useEffect(() => {
-        getTypeofad();
-        getBannerda();
-        getlinkimgda();
+        getDasLinkData();
+        getDasBannerData();
     }, []);
 
-    const getlinkimgda = () => {
-        getAdLinkImgData().then((result) => {
-            if (!result) {
+    // get DAS Link data from API
+    const getDasLinkData = () => {
+        getDasLinkDataAPI().then((res) => {
+            if (!res) {
                 const temp = [];
-                dispatch(addlinkimgdadata(temp));
+                dispatch(addDASLinkData(temp));
             } else {
-                dispatch(addlinkimgdadata(result));
+                dispatch(addDASLinkData(res));
             }
         });
     };
 
-    const getTypeofad = () => {
-        gettypeofad().then((result) => {
-            if (!result) {
-                dispatch(adddapoptypedata("none"));
-            } else {
-                dispatch(adddapoptypedata(result[0].adpoptype));
-            }
-        });
-    };
-
-    const getBannerda = () => {
-        getAdBannerData().then((result) => {
-            if (!result) {
+    // get DAS banner data from API
+    const getDasBannerData = () => {
+        getAdBannerData().then((res) => {
+            if (!res) {
                 const temp = [];
-                dispatch(addbannerdadata(temp));
+                dispatch(addDASBannerData(temp));
             } else {
-                dispatch(addbannerdadata(result));
+                dispatch(addDASBannerData(res));
             }
         });
     };

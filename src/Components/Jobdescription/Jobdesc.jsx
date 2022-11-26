@@ -14,16 +14,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareSquare, faCopy } from "@fortawesome/free-solid-svg-icons";
 
 // import components
-import Email from "../Emailmini/Email";
-import Bannerda from "../BannerDa/Bannerda";
 import JdLoader from "../Loader/JdLoader";
-// import Feedback from "../UiComponent/Feedback/Feedback"
 import Footer from "../UiComponent/Footer/Footer";
 import Header from "../UiComponent/Header/Header";
-import LinkdaDesktop from "../Linkda_desktop/LinkdaDesktop";
 
 import { getAlljdData, countClickinJd } from "../../Helper/Jdapicall";
-import LinkimgDa from "../LinkimgDa/LinkimgDa";
 
 const JobDesc = () => {
     const props = useParams();
@@ -144,10 +139,6 @@ const JobDesc = () => {
                                 </table>
                             </div>
 
-                            <div className="viewMobile">
-                                <Bannerda />
-                            </div>
-
                             {/* Job Description  */}
                             {data.jobdesc !== "<p>N</p>" && (
                                 <div className={styles.detail_con}>
@@ -173,11 +164,6 @@ const JobDesc = () => {
                                         </div>
                                     )}
 
-                                <div className="viewMobile">
-                                    <br />
-                                    <LinkimgDa count={0} />
-                                </div>
-
                                 {data.skills !== "<p>N</p>" &&
                                     data.skills !== "N" && (
                                         <div>
@@ -188,11 +174,6 @@ const JobDesc = () => {
                                                 Prefered Skills
                                             </h2>
                                             <p>{parse(data.skills)}</p>
-
-                                            <div className="viewMobile">
-                                                <br />
-                                                <LinkimgDa count={1} />
-                                            </div>
                                         </div>
                                     )}
 
@@ -202,11 +183,6 @@ const JobDesc = () => {
                                             Responsibility{" "}
                                         </h2>
                                         <p>{parse(data.responsibility)}</p>
-
-                                        <div className="viewMobile">
-                                            <br />
-                                            <LinkimgDa count={0} />
-                                        </div>
                                     </div>
                                 )}
                             </div>
@@ -218,11 +194,6 @@ const JobDesc = () => {
                                         About Company
                                     </h2>
                                     <p>{parse(data.aboutCompany)}</p>
-
-                                    <div className="viewMobile">
-                                        <br />
-                                        <LinkimgDa count={1} />
-                                    </div>
                                 </div>
                             )}
 
@@ -305,11 +276,6 @@ const JobDesc = () => {
                 </div>
 
                 {/* Sidebar for desktop  */}
-                <div className={styles.jd_sidebar}>
-                    <LinkdaDesktop />
-                    <Bannerda />
-                    <Email />
-                </div>
             </div>
             <Footer />
         </div>

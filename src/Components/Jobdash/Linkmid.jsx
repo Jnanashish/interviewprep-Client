@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // import components
-import Jobcard from "../UiComponent/Jobcard/Jobcard.jsx";
+import Jobcard from "../UiComponent/JobDetailsCard/JobDetailsCard.jsx";
 import { countClickinJd } from "../../Helper/Jdapicall";
 import { useSelector } from "react-redux";
 
@@ -24,8 +24,7 @@ const LinkUI = (props) => {
     const [showModal, setShowModal] = useState(false);
     const [showbtn, setShoebtn] = useState(false);
 
-    const adpoptype = useSelector((state) => state.linkimgda.dapoptype);
-    const bannerdadata = useSelector((state) => state.linkimgda.bannerda);
+    const adpoptype = "none";
 
     let history = useHistory();
 
@@ -64,29 +63,6 @@ const LinkUI = (props) => {
                             className={styles.cross_icon}
                             icon={faXmark}
                         />
-                        <div>
-                            {bannerdadata.map((item) => {
-                                return (
-                                    <a
-                                        key={item._id}
-                                        onClick={() =>
-                                            countBannerClick(item._id)
-                                        }
-                                        href={item.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer">
-                                        <p className={styles.ad_text}>
-                                            Click here 👇
-                                        </p>
-                                        <img
-                                            className={styles.bannerda_con}
-                                            src={item.imagePath}
-                                            alt="Ads Poster"
-                                        />
-                                    </a>
-                                );
-                            })}
-                        </div>
                         {showbtn && (
                             <button
                                 className={styles.close_btn}

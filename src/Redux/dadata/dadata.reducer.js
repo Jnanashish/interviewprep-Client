@@ -1,31 +1,22 @@
-import {
-    ADD_DATA,
-    ADD_DAPOPTYPE_DATA,
-    ADD_BANNERDA_DATA,
-} from "./dadata.types";
+import { ADD_DASLINK_DATA, ADD_DASBANNER_DATA } from "./dadata.types";
 
 const INITIAL_STATE = {
-    data: [],
-    dapoptype: "",
-    bannerda: [],
+    dasLink: [],
+    dasBanner: [],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case ADD_DATA:
+        case ADD_DASLINK_DATA:
             return {
                 ...state,
-                data: action.payload.data,
+                dasLink: action.payload.dasLink,
             };
-        case ADD_DAPOPTYPE_DATA:
+
+        case ADD_DASBANNER_DATA:
             return {
                 ...state,
-                dapoptype: action.payload.dapoptype,
-            };
-        case ADD_BANNERDA_DATA:
-            return {
-                ...state,
-                bannerda: action.payload.dapoptype,
+                dasBanner: action.payload.dasBanner,
             };
 
         default:
