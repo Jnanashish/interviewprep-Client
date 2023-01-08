@@ -78,11 +78,11 @@ const Jobdash = () => {
             <div className={styles.jobdashboard_con}>
                 {dasBannerData.length === 0 && <Linkda />}
                 <BannerDa />
-                {!errmsg && (
+                {/* {!errmsg && (
                     <h1 className={styles.title_mobile}>
                         Recent off-campus drives :
                     </h1>
-                )}
+                )} */}
                 {!errmsg && data.length === 0 && <Jobcardloader />}
                 {!errmsg &&
                     data.map((item) => {

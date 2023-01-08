@@ -49,7 +49,9 @@ const JobDetailsCard = (props) => {
                             <span className={styles.chip}>{jobtype}</span>
                         )}
                         {location !== "N" && (
-                            <span className={styles.chip}>
+                            <span
+                                style={{ backgroundColor: "#EFFFF0" }}
+                                className={styles.chip}>
                                 <img
                                     src="https://img.icons8.com/material-outlined/24/null/marker.png"
                                     alt="location logo"
@@ -58,7 +60,9 @@ const JobDetailsCard = (props) => {
                             </span>
                         )}
                         {experience !== "N" && (
-                            <span className={styles.chip}>
+                            <span
+                                style={{ backgroundColor: "#F0ECFF" }}
+                                className={styles.chip}>
                                 <img
                                     src="https://img.icons8.com/ios-glyphs/30/null/time-machine--v1.png"
                                     alt="time logo"

@@ -22,7 +22,7 @@
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 18% 82%;
     padding: 12px 10px;
     margin: 0px auto 0px;
     border-radius: 16px;
@@ -92,9 +92,11 @@
   line-height: 24px;
   letter-spacing: normal;
   margin: 0px;
+  justify-self: start;
+  align-self: center;
 
   @media (max-width: 768px) {
-    place-self: center;
+    // place-self: center;
     font-size: 1.06rem;
     line-height: 1.4rem;
     margin: 0px 0px 0px 2px;
@@ -131,8 +133,9 @@
     font-size: 0.8rem;
     color: #697586;
     font-weight: 500;
+    margin-left: 8px;
 
-    @media (max-width: 7680px) {
+    @media (max-width: 768px) {
       font-size: 0.7rem;
     }
   }
@@ -149,14 +152,14 @@
     }
   }
 
-  @media (max-width: 7680px) {
+  @media (max-width: 768px) {
     grid-template-columns: 18% 82%;
-    gap: 10px;
+    // gap: 10px;
     line-height: 1.08rem;
   }
   @media (max-width: 300px) {
     grid-template-columns: 20% 80%;
-    gap: 3px;
+    // gap: 30px;
     line-height: 1.08rem;
     p {
       font-size: 0.7rem;
