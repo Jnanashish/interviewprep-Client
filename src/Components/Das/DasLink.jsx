@@ -15,7 +15,7 @@ const Linkda = () => {
                     <div className={styles.ad_container}>
                         <p>{data[0].title}</p>
                         <img
-                            src="https://img.icons8.com/ios-glyphs/60/0050ff/chevron-right.png"
+                            src="https://img.icons8.com/ios-glyphs/60/FFFFFF/chevron-right.png"
                             alt="forward icon"
                         />
                     </div>

@@ -19,7 +19,7 @@ const BannerDa = () => {
                             alt="banner"
                         />
                         <p className={styles.clickhereMsg}>
-                            Click on this banner to Visit.
+                            Click on this banner.
                         </p>
                     </div>
                 </a>

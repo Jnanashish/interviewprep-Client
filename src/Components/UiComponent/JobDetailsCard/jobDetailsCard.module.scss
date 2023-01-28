@@ -10,7 +10,7 @@
   font-family: "Inter", sans-serif;
 
   border-radius: 0.75rem;
-  border: 1px solid rgba(218, 223, 231, 1);
+  border: 0.8px solid rgba(218, 223, 231, 1);
   button {
     display: none;
   }
@@ -179,13 +179,15 @@
 
 .chip {
   padding: 3px 8px;
-  background-color: #e7edf9;
+  background-color: #deebff;
   border-radius: 6px;
   font-size: 0.7rem;
   margin-right: 10px;
-
+  font-weight: 600;
+  color: #364152;
   p {
     font-size: 0.8rem;
+    font-weight: 700;
     width: 100%;
   }
   img {

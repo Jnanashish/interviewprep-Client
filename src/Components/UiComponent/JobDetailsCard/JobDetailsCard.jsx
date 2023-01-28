@@ -46,7 +46,11 @@ const JobDetailsCard = (props) => {
                 <div className={styles.chipContainer}>
                     <div>
                         {jobtype !== "N" && (
-                            <span className={styles.chip}>{jobtype}</span>
+                            <span
+                                style={{ color: "#1d4ed8" }}
+                                className={styles.chip}>
+                                {jobtype}
+                            </span>
                         )}
                         {location !== "N" && (
                             <span
@@ -59,7 +63,7 @@ const JobDetailsCard = (props) => {
                                 {location}
                             </span>
                         )}
-                        {experience !== "N" && (
+                        {experience !== "N" && experience.length < 10 && (
                             <span
                                 style={{ backgroundColor: "#F0ECFF" }}
                                 className={styles.chip}>
