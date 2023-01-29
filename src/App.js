@@ -11,11 +11,16 @@ import JobDesc from "./Components/Jobdescription/Jobdesc";
 import { useDispatch } from "react-redux";
 
 // import methods from helper
-import { getDasLinkDataAPI, getAdBannerData } from "./Helper/adapicall";
+import {
+    getDasLinkDataAPI,
+    getAdBannerData,
+    getAdPopType,
+} from "./Helper/adapicall";
 
 import {
     addDASLinkData,
     addDASBannerData,
+    getDASPopUpType,
 } from "./Redux/dadata/dadata.actions";
 
 function App() {
@@ -25,6 +30,7 @@ function App() {
     useEffect(() => {
         getDasLinkData();
         getDasBannerData();
+        getDASPopTypeData();
     }, []);
 
     // get DAS Link data from API
@@ -47,6 +53,17 @@ function App() {
                 dispatch(addDASBannerData(temp));
             } else {
                 dispatch(addDASBannerData(res));
+            }
+        });
+    };
+
+    const getDASPopTypeData = () => {
+        getAdPopType().then((res) => {
+            if (!res) {
+                const temp = [];
+                dispatch(getDASPopUpType(temp));
+            } else {
+                dispatch(getDASPopUpType(res));
             }
         });
     };

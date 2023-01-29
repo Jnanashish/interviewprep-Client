@@ -25,7 +25,6 @@ const Jobdash = () => {
     const [loader, setLoader] = useState(false);
 
     const dasBannerData = useSelector((state) => state.dasReducer.dasBanner);
-    const dasLinkData = useSelector((state) => state.dasReducer.dasLink);
 
     // load all job description data with page number
     const loadAlljdData = () => {
@@ -33,7 +32,7 @@ const Jobdash = () => {
         getjdData(pagenum).then((result) => {
             if (!result) {
                 console.log("Cannot Load data");
-                // setErrmsg(true);
+
                 setLoader(false);
                 setShowloader(false);
             }
@@ -43,7 +42,6 @@ const Jobdash = () => {
                     setLoaddata(false);
                 }
                 setLoader(false);
-                // setErrmsg(true);
                 setShowloader(false);
             } else if (result) {
                 setData([...data, ...result.data]);
@@ -78,13 +76,10 @@ const Jobdash = () => {
             <div className={styles.jobdashboard_con}>
                 {dasBannerData.length === 0 && <Linkda />}
                 <BannerDa />
-                {/* {!errmsg && (
-                    <h1 className={styles.title_mobile}>
-                        Recent off-campus drives :
-                    </h1>
-                )} */}
+
                 {!errmsg && data.length === 0 && <Jobcardloader />}
                 {!errmsg &&
+                    data.length > 0 &&
                     data.map((item) => {
                         return (
                             <div key={item.id} className={styles.job_cards}>

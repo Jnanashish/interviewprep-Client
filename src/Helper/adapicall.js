@@ -25,6 +25,14 @@ export const getAdBannerData = () => {
         .catch((err) => console.log(err));
 };
 
+export const getAdPopType = () => {
+    return fetch(`${API}/showadpop/get`, { method: "GET" })
+        .then((res) => {
+            return res.json();
+        })
+        .catch((err) => console.log(err));
+};
+
 export const countBannerClick = (id) => {
     fetch(`${API}/sda/banner/count/${id}`, { method: "PATCH" });
 };

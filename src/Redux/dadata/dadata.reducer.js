@@ -1,8 +1,13 @@
-import { ADD_DASLINK_DATA, ADD_DASBANNER_DATA } from "./dadata.types";
+import {
+    ADD_DASLINK_DATA,
+    ADD_DASBANNER_DATA,
+    GET_DAS_POPTYPE,
+} from "./dadata.types";
 
 const INITIAL_STATE = {
     dasLink: [],
     dasBanner: [],
+    daPopType: [],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -19,6 +24,11 @@ const reducer = (state = INITIAL_STATE, action) => {
                 dasBanner: action.payload.dasBanner,
             };
 
+        case GET_DAS_POPTYPE:
+            return {
+                ...state,
+                daPopType: action.payload.daPopType,
+            };
         default:
             return state;
     }

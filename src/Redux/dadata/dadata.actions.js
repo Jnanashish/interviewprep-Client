@@ -1,4 +1,8 @@
-import { ADD_DASLINK_DATA, ADD_DASBANNER_DATA } from "./dadata.types";
+import {
+    ADD_DASLINK_DATA,
+    ADD_DASBANNER_DATA,
+    GET_DAS_POPTYPE,
+} from "./dadata.types";
 
 // add das link data
 export const addDASLinkData = (dasLink) => {
@@ -16,6 +20,15 @@ export const addDASBannerData = (dasBanner) => {
         type: ADD_DASBANNER_DATA,
         payload: {
             dasBanner,
+        },
+    };
+};
+
+export const getDASPopUpType = (daPopType) => {
+    return {
+        type: GET_DAS_POPTYPE,
+        payload: {
+            daPopType,
         },
     };
 };

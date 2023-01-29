@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const BannerDa = () => {
     const data = useSelector((state) => state.dasReducer.dasBanner);
-    console.log("DATA", data);
     return (
         <div>
             {data.length > 0 && (
